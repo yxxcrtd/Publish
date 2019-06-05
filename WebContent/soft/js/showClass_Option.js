@@ -1,0 +1,1 @@
+document.write("<option value='87'>系统工具</option><option value='88'>网络工具</option><option value='90'>媒体工具</option><option value='91'>图文处理</option><option value='92'>桌面工具</option><option value='93'>管理软件</option><option value='94'>教育教学</option><option value='95'>游戏娱乐</option><option value='96'>数码软件</option><option value='97'>外语学习</option>");

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="Grade" table="T_SW_Grade" schema="dbo" catalog="qinghuaswinfo">
+		<id name="gid" type="java.lang.Integer">
+			<column name="G_Id" />
+			<generator class="identity" />
+		</id>
+		<property name="gname" type="java.lang.String">
+			<column name="G_Name" length="10" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

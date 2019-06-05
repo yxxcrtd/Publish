@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="Announcement" table="Ext_Announce">
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		<!-- 公告标题。 -->
+		<property name="title" column="Title" type="string" length="255" />
+		<!--  公告的内容。 -->	
+		<property name="content" column="Content" type="string" />
+		<!-- 公告的作者。 -->
+		<property name="author" column="Author" type="string" />
+		<!-- 公告创建日期。 -->
+		<property name="createDate" column="CreateDate" type="date" />
+		<!-- 公告显示的截止日期。 -->
+		<property name="offDate" column="OffDate" type="date" />
+		<!-- 是否选中，只有被选中的公告才会列出。 -->
+		<property name="isSelected" column="IsSelected" type="boolean" />
+		<!--  所属频道标识。如果=-1表示为频道公共公告，=0，表示是主页公告，其它为该频道的公告。  -->
+		<property name="channelId" column="ChannelId" type="int" />
+		<!-- 显示方式：0 – 全部；1-滚动；2-弹出。 -->
+		<property name="showType" column="ShowType" type="int" />
+		<!-- 过期时间，单位：天。 -->
+		<property name="outTime" column="OutTime" type="int" />
+		
+		<!-- 是否已经生成静态化页面 -->
+        <property name="isGenerated" column="IsGenerated" type="boolean" />
+        <!-- 静态化页面的地址 -->
+        <property name="staticPageUrl" column="StaticPageUrl" type="string" />
+		
+	</class>
+</hibernate-mapping>

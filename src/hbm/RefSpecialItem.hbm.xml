@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+<class name="RefSpecialItem" table="Ref_Special_Item" dynamic-update="true" lazy="false">
+	<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+	<id name="id" column="ObjectId" >
+		<generator class="native" />
+	</id>
+
+	<!-- 所在专题 -->
+	<property name="specialId" column="SpecialId" type="int" update="false" />
+	
+	<!-- 项目的标识，关联Cor_Item。 -->
+	<property name="itemId" column="ItemId" type="int" update="false" />
+</class>
+</hibernate-mapping>

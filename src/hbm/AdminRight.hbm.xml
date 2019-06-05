@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="AdminRight" table="Adm_Right">
+		<!-- 权限的标识，此标识为PK，由数据库自动生成。 -->
+		<id name="id" column="ID" >
+			<generator class="native" />
+		</id>
+      <!-- 管理员用户的标识，关联到管理员用户。 -->
+      <property name="userId" column="UserId" type="int"/>
+      <!-- 频道的标识。 -->
+		<property name="channelId" column="ChannelId" type="int" not-null="false" />
+		
+		<!-- 栏目标识的集合，用"|"分割多个标识。 -->
+		<property name="columnId" column="ColumnId" type="int" not-null="false" />
+
+		<!-- 权限的目标对象。 -->
+		<property name="target" column="Target" type="string" />
+
+		<!-- 在目标上允许的操作。 -->
+		<property name="operation" column="Operation" type="string" />
+		
+	</class>
+</hibernate-mapping>

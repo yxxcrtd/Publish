@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.pjo">
+    <class name="Vote" table="Ext_Vote">
+    	<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+    	<id name="id" column="ObjectId">
+    		<generator class="native" />
+    	</id>
+
+    	<!-- 调查标题。 -->
+    	<property name="title" column="Title" type="string" />
+    	<!-- 调查问题一。 -->
+    	<property name="select1" column="Select1" type="string" />
+    	<!-- 答案一。 -->
+    	<property name="answer1" column="Answer1" type="int" />
+    	<!-- 调查问题二。 -->
+    	<property name="select2" column="Select2" type="string" />
+    	<!-- 答案二。 -->
+    	<property name="answer2" column="Answer2" type="int" />
+    	<!-- 调查问题三。 -->
+    	<property name="select3" column="Select3" type="string" />
+    	<!-- 答案三。 -->
+    	<property name="answer3" column="Answer3" type="int" />
+    	<!-- 调查问题四。 -->
+    	<property name="select4" column="Select4" type="string" />
+    	<!-- 答案四。 -->
+    	<property name="answer4" column="Answer4" type="int" />
+    	<!-- 调查问题五。 -->
+    	<property name="select5" column="Select5" type="string" />
+    	<!-- 答案五。 -->
+    	<property name="answer5" column="Answer5" type="int" />
+    	<!-- 调查问题六。 -->
+    	<property name="select6" column="Select6" type="string" />
+    	<!-- 答案六。 -->
+    	<property name="answer6" column="Answer6" type="int" />
+    	<!-- 调查问题七。 -->
+    	<property name="select7" column="Select7" type="string" />
+    	<!-- 答案七。 -->
+    	<property name="answer7" column="Answer7" type="int" />
+    	<!-- 调查问题八。 -->
+    	<property name="select8" column="Select8" type="string" />
+    	<!-- 答案八。 -->
+    	<property name="answer8" column="Answer8" type="int" />
+    	<!-- 调查开始时间。 -->
+    	<property name="beginTime" column="BeginTime" type="timestamp" />
+    	<!-- 调查结束时间。 -->
+    	<property name="endTime" column="EndTime" type="timestamp" />
+    	<!-- 调查类型。0 - 单选，1 - 多选 -->
+    	<property name="voteType" column="VoteType" type="int" />
+    	<!-- 调查开启。0关闭，1开启 -->
+    	<property name="isSelected" column="IsSelected" type="boolean"
+    		not-null="true" />
+    	<!-- 是否是项目的投票。若为false表示为网站的投票。 -->
+    	<property name="isItem" column="IsItem" type="boolean" />
+
+		<!-- 所属频道标识和项目标识，也许用不到。 -->
+		<property name="channelId" column="ChannelID" type="int" />
+		<property name="itemId" column="ItemID" type="int" />
+		
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="Column" table="Cor_Column" >
+  <!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+  <id name="id" type="int">
+   <column name="ObjectId" />
+   <generator class="native" />
+  </id>
+  <!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+  <property name="objectUuid" type="string" update="false">
+   <column name="ObjectUuid" length="40" not-null="true" />
+  </property>
+  <!-- 对象的名字。 -->
+  <property name="name" type="string">
+   <column name="Name" length="64" not-null="true" />
+  </property>
+
+  <!-- 页面的 Logo. -->
+  <property name="logo" type="string">
+   <column name="Logo" />
+  </property>
+  <!-- 页面的 Banner. -->
+  <property name="banner" type="string">
+   <column name="Banner" />
+  </property>
+  <!-- 页面的 Copyright. -->
+  <property name="copyright" type="string">
+   <column name="Copyright" />
+  </property>
+  <!-- 页面的 MetaKey. -->
+  <property name="metaKey" type="string">
+   <column name="MetaKey" />
+  </property>
+  <!-- 页面的 MetaDesc -->
+  <property name="metaDesc" type="string">
+   <column name="MetaDesc" />
+  </property>
+  <!-- 页面使用的模板标识。 -->
+  <property name="templateId" type="int">
+   <column name="TemplateId" not-null="true" />
+  </property>
+  <!-- 样式标识。 -->
+  <property name="skinId" type="int">
+   <column name="SkinId" not-null="true" />
+  </property>
+
+  <!-- 所属的频道标识。外键关联到Cor_Channel表。 -->
+  <property name="channelId" type="int" update="false">
+   <column name="ChannelId" not-null="true" />
+  </property>
+  <!-- 父栏目的标识。如果没有父栏目，则此值为 0 。 -->
+  <property name="parentId" type="int" update="false">
+   <column name="ParentId" not-null="true" />
+  </property>
+  <!-- 树形结构的父节点全路径。 -->
+  <property name="parentPath" type="string" update="false">
+   <column name="ParentPath" not-null="true" />
+  </property>
+  <!-- 树形结构的排序全路径。 -->
+  <property name="orderPath" type="string" update="false">
+   <column name="OrderPath" not-null="true" />
+  </property>
+  <!-- 栏目的简要提示，不支持html和标签。 -->
+  <property name="tips" type="string">
+   <column name="Tips" length="128" />
+  </property>
+  <!-- 栏目的详细说明，支持html和标签。 -->
+  <property name="description" type="string">
+   <column name="Description" />
+  </property>
+  <!-- 栏目类型：内部 – 0；外部 – 1；？其它。 -->
+  <property name="columnType" type="int" update="false">
+   <column name="ColumnType" not-null="true" />
+  </property>
+  <!-- 栏目的英文名字，同时也是数据存储的路径名。 -->
+  <property name="columnDir" type="string" update="false">
+   <column name="ColumnDir" length="32" />
+  </property>
+  <!-- 外部栏目。外部栏目指链接到本系统以外的地址中。当此栏目准备链接到网站中的其他系统时，请使用这种方式。不能在外部栏目中添加文章，也不能添加子栏目。 -->
+  <property name="linkUrl" type="string" column="LinkUrl" />
+  <!-- 打开方式：1：在新窗口打开；0：在原窗口打开。 -->
+  <property name="openType" type="int" column="OpenType" />
+  <!-- 是否在顶部导航栏显示：此选项只对一级栏目有效。 -->
+  <property name="showOnTop" type="boolean" column="ShowOnTop" />
+  <!-- 是否在频道首页分类列表处显示：此选项只对一级栏目有效。如果一级栏目比较多，但首页不想显示太多的分类列表，这个选项就非常有用。 -->
+  <property name="showOnIndex" type="boolean"
+   column="ShowOnIndex" />
+  <!-- 是否在父栏目的分类列表处显示：如果某栏目下有几十个子栏目，但只想显示其中几个子栏目的文章列表，这个选项就非常有用。 -->
+  <property name="isElite" type="boolean" column="IsElite" />
+  <!-- 有子栏目时是否可以在此栏目添加文章。 -->
+  <property name="enableAdd" type="boolean" column="EnableAdd" />
+  <!-- 是否启用此栏目的防止复制、防盗链功能。 -->
+  <property name="enableProtect" type="boolean" column="EnableProtect" />
+  <!-- 每页显示的文章数。 -->
+  <property name="maxPerPage" type="int" column="MaxPerPage" />
+  <!-- 此栏目下的文章的默认模板。 -->
+  <property name="defaultItemTemplate" type="int" column="DefaultItemTemplate" />
+  <!-- 此栏目下的文章的默认配色风格。 -->
+  <property name="defaultItemSkin" type="int" column="DefaultItemSkin" />
+  <!-- 此栏目下的文章列表的排序方式，1：文章ID（降序）；2：文章ID（升序）；3：更新时间（降序）；4：更新时间（升序）；5：点击次数（降序）；6：点击次数（升序）。 -->
+  <property name="itemListOrderType" type="int" column="ItemListOrderType" />
+  <!-- 此栏目下的文章打开方式，0：在原窗口打开；1：在新窗口打开。 -->
+  <property name="itemOpenType" type="int" column="ItemOpenType" />
+
+  <!-- 是否已经生成静态化页面 -->
+  <property name="isGenerated" column="IsGenerated" update="false" type="boolean" />
+  <!-- 静态化页面的地址 -->
+  <property name="staticPageUrl" column="StaticPageUrl" update="false" type="string" />
+ </class>
+</hibernate-mapping>

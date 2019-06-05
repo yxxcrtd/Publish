@@ -1,0 +1,13 @@
+body {
+	background-color: #fafafa;
+}
+body, table, tr, td {
+	margin:0 0 0 0;
+	font-size: 14px;
+}
+
+a{text-decoration: none; font-size: 14px;} /* 閾炬帴鏃犱笅鍒掔嚎,鏈変负underline */ 
+a:link {color: #0000ff; font-size: 14px;} /* 鏈闂殑閾炬帴 */
+a:visited {color: #880000; font-size: 14px;} /* 宸茶闂殑閾炬帴 */
+a:hover{color: #ff0000; font-size: 14px;} /* 榧犳爣鍦ㄩ摼鎺ヤ笂 */ 
+a:active {color: #0000ff; font-size: 14px;} /* 鐐瑰嚮婵�娲婚摼鎺� */

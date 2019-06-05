@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="PageTemplate" table="Tmpl_Main">
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		<!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+		<property name="objectUuid" column="ObjectUuid" type="string" update="false" />
+		<!-- 对象的名字。 -->
+		<property name="name" column="Name" type="string" length="64" />
+
+		<!-- 所应用到的频道。如果频道标识=0，表示这是该模板方案的原始模板，当应用到频道的时候会复制一个给该频道。 -->
+		<property name="channelId" column="ChannelId" type="integer" />
+		<!-- 此模板所属的模板方案标识。FK 引用到 Tmpl_Schema(Theme) 表格。 -->
+		<property name="themeId" column="ThemeId" type="integer" />
+		<!-- 模板类型，对于特定的模板类型此指是固定的。 -->
+		<property name="typeId" column="TypeId" type="int" />
+		<!-- 模板的实际内容。 -->	
+		<property name="content" column="Content" type="string" />
+		<!-- 是否是缺省的。 -->
+		<property name="isDefault" column="IsDefault" type="boolean" />
+		<!-- 是否是方案中缺省的。 -->
+		<property name="themeDefault" column="ThemeDefault" type="boolean" />
+		<!-- 是否已经被删除了。 -->
+		<property name="deleted" column="Deleted" type="boolean" />
+	</class>
+</hibernate-mapping>

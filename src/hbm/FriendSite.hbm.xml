@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="FriendSite" table="Ext_FriendSite">
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		
+		<!-- 友情链接的 类别 标识。关联到 FsKind 对象。 -->
+      <!-- <property name="kindId" type="integer" column="KindId" /> -->
+		<many-to-one name="kind" column="KindId" class="FriendSiteKind" fetch="select" 
+			cascade="none" not-found="ignore" lazy="false" />
+		<!-- 友情链接的 专题 标识。关联到 FsSpecial 对象。 -->
+		<many-to-one name="special" column="SpecialId" class="FriendSiteSpecial" fetch="select"
+			cascade="none" not-found="ignore" lazy="false" />
+     	<!-- <property name="specialId" type="integer" column="SpecialId" /> -->
+
+		<!-- 链接类型。文字链接 = 1；图片链接 = 2。 -->
+		<property name="linkType" type="integer" column="LinkType" />
+		<!-- 网站的名字。 -->
+		<property name="siteName" type="string" column="SiteName" />
+		<!-- 网站的链接地址。 -->
+		<property name="siteUrl" type="string" column="SiteUrl" />
+		<!-- 该网站的描述。 -->
+		<property name="description" type="string" column="Description" />
+		<!-- 该网站的 Logo 图片。 -->
+		<property name="logo" type="string" column="Logo" />
+		<!-- 该网站的管理员名字。 -->
+		<property name="siteAdmin" type="string" column="SiteAdmin" />
+		<!-- 该网站的邮件地址。 -->
+		<property name="siteEmail" type="string" column="SiteEmail" />
+		<!-- 该网站管理员登录管理网站信息的密码。 -->
+		<property name="sitePassword" type="string" column="SitePassword" update="false" />
+		<!-- 网站星级，取值 0 - 5。 -->
+		<property name="stars" type="integer" column="Stars" />
+		<!-- 点击数。 -->
+		<property name="hits" type="integer" column="Hits" />
+		<!-- 最后修改日期。 -->
+		<property name="lastModified" type="date" column="LastModified" />
+		<!-- 是否精华站点。 -->
+		<property name="elite" type="boolean" column="Elite" />
+		<!-- 是否已经经过了审核。 -->
+		<property name="approved" type="boolean" column="Approved" />
+		<!-- 排序标识。 -->
+		<property name="orderId" type="integer" column="OrderId" />
+	</class>
+</hibernate-mapping>

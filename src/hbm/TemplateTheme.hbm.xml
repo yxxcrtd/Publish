@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="TemplateTheme" table="Tmpl_Theme">
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		<!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+		<property name="objectUuid" column="ObjectUuid" type="string" update="false" />
+		<!-- 对象的名字。 -->
+		<property name="name" column="Name" type="string" length="64" />
+
+		<!-- 模板方案的详细描述。 -->
+		<property name="description" column="Description" type="string" />
+		<!-- 是否是缺省的方案。 -->
+		<property name="isDefault" column="IsDefault" type="boolean" />
+	</class>
+</hibernate-mapping>

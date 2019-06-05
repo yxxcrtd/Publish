@@ -1,0 +1,44 @@
+/* 帮助系统使用的样式单 */
+
+body {
+	font-family: 宋体, Verdana, Arial;
+}
+
+/* 标签介绍表格样式 */
+#label_table {
+	background-color: #ececec;
+	border: 1px solid #cecece;
+	WORD-BREAK: break-all;
+	margin-bottom: 28px;
+	width: 95%;
+	font-famliy: 宋体, Verdana, Arial;
+	font-size: 14px;
+}
+
+#label_table td {
+	background-color: white;
+}
+
+#label_table th {
+	text-align: left;
+	background-color: lightgray;
+}
+
+.main_shadow {
+	height: 20px;
+}
+
+span.object {
+	color: red;
+	font-family: Verdana;
+	font-style: italic;
+	font-size: 13px;
+}
+
+/* 一般性示例代码放在此标签里面。 */
+pre {
+	border: 1px solid #dedede;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #ececec;
+}

@@ -1,0 +1,22 @@
+﻿BODY{font-size:12px;back-groundcolor:#ffffff}
+
+	a:link{text-decoration:none;color:#000000;}
+	a:visited {text-decoration:none;color:#000000;}
+	a:hover {text-decoration:none;color:#FF0000;}
+	a:active {text-decoration:none;color:#FF0000;}
+td{font-size:12px;}
+
+/*主菜单样式*/
+	a.mainmenu:link{text-decoration:none;color:#003366;font-weight:bold}
+	a.mainmenu:visited {text-decoration:none;color:#000066;font-weight:bold}
+	a.mainmenu:hover {text-decoration:none;color:#0099CC;font-weight:bold}
+	a.mainmenu:active {text-decoration:none;color:#990000;font-weight:bold}
+	
+/*子菜单样式*/
+	
+	a.submenu:link{text-decoration:none;color:#003366;}
+	a.submenu:visited {text-decoration:none;color:#000066;}
+	a.submenu:hover {text-decoration:none;color:#0099CC;}
+	a.submenu:active {text-decoration:none;color:#990000;}
+
+	

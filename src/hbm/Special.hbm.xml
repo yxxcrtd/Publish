@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.pjo">
+	<class name="Special" table="Cor_Special">
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		<!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+		<property name="objectUuid" column="ObjectUuid" type="string" update="false" />
+		<!-- 专题对象的名字。 -->
+		<property name="name" column="Name" type="string" length="64" />
+		
+		<!-- 页面的 Logo. -->
+		<property name="logo" column="Logo" type="string" length="255" />
+		<!-- 页面的 Banner. -->	
+		<property name="banner" column="Banner" type="string" length="255" />
+		<!-- 页面的 Copyright, SQL 里面是 ntext 能正确获取吗？. -->	
+		<property name="copyright" column="Copyright" type="string" />
+		<!-- 页面的 MetaKey. -->
+		<property name="metaKey" column="MetaKey" type="string" length="255" />
+		<!-- 页面的 MetaDesc -->
+		<property name="metaDesc" column="MetaDesc" type="string" length="255" />
+		<!-- 页面使用的模板标识。 -->
+		<property name="templateId" column="TemplateId" type="int" />
+		<!-- 样式标识。 -->
+		<property name="skinId" column="SkinId" type="int" />
+		
+		<!-- 专题的属性 -->
+		<!-- 所属的频道标识，如果标识为0，则为全站专题。外键关联到Cor_Channel表。 -->
+		<property name="channelId" column="ChannelId" type="int" />
+		<!-- 专题排序。 -->
+		<property name="specialOrder" column="SpecialOrder" type="int" />
+		<!-- 专题的tips提示信息。 -->
+		<property name="tips" column="Tips" type="string" />
+		<!-- 专题的描述信息。 -->
+		<property name="description" column="Description" type="string" />
+		<!-- 专题目录：限定为英文名。 -->
+		<property name="specialDir" column="SpecialDir" type="string" />
+		<!-- 是否推荐，默认为0（不推荐）。 -->
+		<property name="isElite" column="IsElite" type="boolean" />
+		<!-- 专题图片的URL。 -->
+		<property name="specialPicUrl" column="SpecialPicUrl" type="string" />
+		<!-- 专题的打开方式，1：新窗口打开；0：原窗口打开。默认为1。 -->
+		<property name="openType" column="OpenType" type="int" />
+		<!-- 每页显示的项目数量。 -->
+		<property name="maxPerPage" column="MaxPerPage" type="int"></property>
+		
+		<!-- 是否已经生成静态化页面 -->
+      <property name="isGenerated" column="IsGenerated" type="boolean" update="false" />
+      <!-- 静态化页面的地址 -->
+      <property name="staticPageUrl" column="StaticPageUrl" type="string" update="false" />
+
+	</class>
+</hibernate-mapping>

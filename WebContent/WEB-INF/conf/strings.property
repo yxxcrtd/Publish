@@ -1,0 +1,50 @@
+# ----------------------------------------------------------------------
+# 放置提示信息字符串集合。不用随意改动！
+# ----------------------------------------------------------------------
+
+# 通用字符串 - 标准名字未匹配的会在这里匹配。
+success = 操作成功完成。
+fail = 操作失败。
+not_login = 管理员未登录，权限被拒绝。
+unknown = 不支持的命令 {0}。
+no_such_method = 不支持当前命令 {0}，内部未实现方法。
+access_denied = 当前操作权限被拒绝。
+invalid_param = 参数错误，请确定您填写的数据正确。
+internal_error = 内部错误。
+save.success = 创建/更新操作成功完成。
+invalid_channel = 不能找到指定标识的频道，请确定是从有效的链接进入=======================。
+
+# 站点操作字符串
+site.save.success = 站点配置更新成功。
+site.save.access_denied = 更新站点信息权限被拒绝。
+
+# 频道操作字符串
+channel.save.invalid_param_id = 标识为 "{0}" 的频道不存在。
+channel.save.channel_deleted = 频道 "{0}" 已经被删除，从而不能修改其属性。
+channel.save.access_denied = 创建/更新频道信息的操作权限被拒绝。
+channel.save.success = 创建/更新频道 "{0}" 成功完成。
+channel.delete.access_denied = 删除频道的操作权限被拒绝。
+channel.delete.success = 频道 "{0}" 已经成功删除。
+channel.enable.success = 启用频道 "{0}" 已经成功完成。
+channel.disable.success = 停用频道 "{0}" 已经成功完成。
+channel.reorder.success = 更新频道排序成功完成。
+
+# 栏目操作字符串
+column.save.success = 创建/更新栏目 "{0}" 成功完成。
+column.*.invalid_param_id = 指定标识 id={0} 的栏目不存在，请确定您是从有效链接进入的。
+column.*.column_not_in_this_channel = 您要操作的栏目 "{0}" 不在当前频道中，请确定您是从有效链接进入的。
+column.delete.cant_delete_root = 不能删除频道的根栏目。(??也没有链接可以来到这里?)
+column.delete.access_denied = 不能删除栏目，权限被拒绝。
+column.delete.success = 栏目 "{0}" 成功删除。
+column.clear.access_denied = 不能清空栏目，权限被拒绝。
+column.clear.success = 栏目 "{0}" 清空成功完成。
+
+# 专题操作字符串
+special.save.success = 创建/更新专题 "{0}" 成功完成。
+special.save.invalid_param_id = 指定标识 id={0} 的专题不存在，请确定您是从有效链接进入的。
+special.save.access_denied = 创建/更新专题的操作权限被拒绝。
+special.delete.success = 专题 "{0}" 成功删除。
+special.reorder.success = 专题排序成功。
+special.unite.success = 合并专题 "{0}" 到 "{1}" 成功完成。
+special.clear.success = 清空专题 "{0}" 成功完成。
+

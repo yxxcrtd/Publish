@@ -1,0 +1,15 @@
+&lt;!-- data in the label: column_list, options --&gt;
+&lt;table border='0' width='100%' cellSpacing=0 cellPadding=0 border='0'&gt;
+\#{foreach column in column_list}
+ &lt;tr&gt;
+  &lt;td width="60"&gt;&lt;nobr&gt;[&lt;strong&gt;&lt;a href="\#{column.pageUrl}" 
+    \#{options.openType.htmlTarget}&gt;\#{column.name}&lt;/a&gt;&lt;/strong&gt;]&lt;/nobr&gt;&lt;/td&gt;
+  &lt;td width='*'&gt;
+  &lt;td&gt;
+    &nbsp;\#{foreach child_column in column.childColumns}
+      &lt;a href="\#{child_column.pageUrl}" \#{options.openType.htmlTarget}&gt;\#{child_column.name}&lt;/a&gt;
+    \#{/foreach}
+    &lt;/td&gt;
+  &lt;/tr&gt;
+\#{/foreach}
+&lt;/table&gt;

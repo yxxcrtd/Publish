@@ -1,0 +1,29 @@
+body {
+	font-size:12px;
+}
+
+div{
+
+font-size:12px;
+
+line-height:150%;}
+
+td {
+	font-size:12px;
+}
+
+
+	a:link{text-decoration:none;color:#5E6366;font-size:12px}
+	a:visited {text-decoration:none;color:#5E6366;font-size:12px}
+	a:hover {text-decoration:none;color:#F6A31F;font-size:12px}
+	a:active {text-decoration:none;color:#5E6366;font-size:12px}
+	
+.lineheight{
+	  line-height:130%;
+}
+
+
+	a.news:link{text-decoration:none;color:#2F4B7B;font-size:12px}
+	a.news:visited {text-decoration:none;color:#2F4B7B;font-size:12px}
+	a.news:hover {text-decoration:none;color:#cc0000;font-size:12px}
+	a.news:active {text-decoration:none;color:#2F4B7B;font-size:12px}

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="Module" table="Cor_Module">
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		<!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+		<property name="objectUuid" column="ObjectUuid" type="string" update="false" />
+		<!-- 对象的名字。 -->
+		<property name="name" column="Name" type="string" length="64" />
+		<!-- 对象的英文名称。 -->
+		<property name="title" column="Title" type="string" length="20" />
+		
+		<!-- 模块的版本。 -->
+		<property name="version" column="Version" type="string" length="32" />
+		<!-- 模块的状态。 -->
+		<property name="status" column="Status" type="int" not-null="true" />
+		<!-- 模块的实现类全名。 -->
+		<property name="moduleClass" column="ModuleClass" type="string" length="255" not-null="true" />
+		<!-- 供应商/生产商名字。 -->
+		<property name="vender" column="Vender" type="string" length="255" />
+		<!-- 帮助或下载地址。 -->
+		<property name="url" column="Url" type="string" length="255" />
+		
+		<sql-query name="LoadModules">
+		  FROM Module m ORDER BY m.id ASC
+		</sql-query>
+		
+	</class>
+</hibernate-mapping>

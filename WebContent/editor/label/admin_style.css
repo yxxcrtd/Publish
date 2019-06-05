@@ -1,0 +1,76 @@
+
+a {text-decoration: none;}
+a:link {color: #000000;text-decoration: none;}
+a:visited {color: #000000;text-decoration: none;}
+a:hover {color: #ff6600;text-decoration: none;}
+a:active {color: #000000;text-decoration: none;}
+
+BODY {
+	FONT-FAMILY: ËÎÌו,verdana;
+	FONT-SIZE: 9pt;
+	text-decoration: none;
+	line-height: 150%;
+	background:#ffffff;
+	SCROLLBAR-FACE-COLOR: #2B73F1;
+	SCROLLBAR-HIGHLIGHT-COLOR: #0650D2;
+	SCROLLBAR-SHADOW-COLOR: #449AE8;
+	SCROLLBAR-3DLIGHT-COLOR: #449AE8;
+	SCROLLBAR-ARROW-COLOR: #02338A;
+	SCROLLBAR-TRACK-COLOR: #0650D2;
+	SCROLLBAR-DARKSHADOW-COLOR: #0650D2;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+TD{
+FONT-FAMILY:ËÎÌו,verdana????;FONT-SIZE: 9pt;line-height: 150%; 
+}
+Input{
+	FONT-SIZE: 12px;
+	HEIGHT: 20px;
+}
+Button
+{
+	FONT-SIZE: 9pt;
+	HEIGHT: 20px; 
+}
+Select
+{
+	FONT-SIZE: 9pt;
+	HEIGHT: 20px;
+}
+.title
+{
+	background:#449AE8;
+	color: #ffffff;
+	font-weight: normal;
+}
+.border
+{
+	border: 1px solid #449AE8;
+}
+/* ???????????CSS??????? */
+.tdbg{
+	background:#f0f0f0;
+	line-height: 120%;
+}
+.tdbg2{
+	background:#E0EEF5;
+	line-height: 120%;
+}
+.tdbg5{
+	background:#E0EEF5;
+	line-height: 120%;
+}
+.bgcolor {
+	background-color: #E1F4EE;
+}
+.bginput { 
+background:url("images/TxtRule.jpg"); 
+background-repeat:repeat-x; 
+font-family:ms shell dlg,tahoma,sans-serif,????; 
+font-size:12px; 
+border: 1px solid #a7a6aa; 
+HEIGHT: 20px;
+}

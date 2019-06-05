@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="Admin" table="Adm_Admin" dynamic-update="true" select-before-update="true">
+		<!-- 管理员标识，此标识为PK，由数据库自动生成。 -->
+		<id name="id" column="ID" >
+			<generator class="native" />
+		</id>
+		<!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+		<property name="objectUuid" column="Uuid" type="string" update="false" />
+        <!-- 此管理员的名字，名字必须唯一。 -->
+        <property name="adminName" column="AdminName" type="string"/>
+        <!-- 此管理员前台登录的名字。此名字可以不唯一。 -->
+		<property name="userName" column="UserName" type="string"/>
+		<!-- 后台登录密码的hash加密值。 -->
+		<property name="password" column="Password" type="string"/>
+		<!-- 最后一次登录的IP地址。 -->
+		<property name="lastLoginIp" column="LastLoginIp" type="string"/>
+		<!-- 最后一次登录的时间。 -->
+		<property name="lastLoginTime" column="LastLoginTime" type="timestamp"/>
+		<!-- 最后一次登出的时间。 -->
+		<property name="lastLogoutTime" column="LastLogoutTime" type="timestamp"/>
+		<!-- 管理员类型，1：超级管理员；2：普通管理员；0：普通管理员且没有设置任何权限。默认为0。 -->
+		<property name="adminType" column="AdminType" type="int"/>
+
+	</class>
+</hibernate-mapping>

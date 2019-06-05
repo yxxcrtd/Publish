@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="Student" table="T_SW_StudentsInfo" schema="dbo" catalog="qinghuaswinfo">
+		<id name="sid" type="java.lang.Integer">
+			<column name="S_Id" />
+			<generator class="identity" />
+		</id>
+		<property name="snumber" type="java.lang.String">
+			<column name="S_Number" length="10" not-null="true" />
+		</property>
+		<property name="sname" type="java.lang.String">
+			<column name="S_Name" length="50" />
+		</property>
+		<property name="gender" type="java.lang.String">
+			<column name="S_Sex" length="2" />
+		</property>
+		<many-to-one name="classs" column="S_Class" lazy="false" />
+		<many-to-one name="grade" column="S_Grade" lazy="false" />
+		<many-to-one name="institute" column="S_Institute" lazy="false" />
+		<many-to-one name="teacher" column="S_Teacher" lazy="false" />
+	</class>
+</hibernate-mapping>

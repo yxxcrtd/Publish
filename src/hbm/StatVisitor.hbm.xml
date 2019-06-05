@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.stat">
+	<class name="StatVisitor" table="Stat_Visitor" >
+		<!-- 主键，自动生成。 -->
+		<id name="id" column="Id" >
+			<generator class="native" />
+		</id>
+		<!-- 来访时间。 -->
+		<property name="visitTime" column="VTime" type="timestamp" />
+		
+		<!-- 来访 IP 地址。 -->
+		<property name="ip" column="Ip" type="string" />
+	
+		<!-- 用户来自的国家地区地址。 -->
+		<property name="address" column="Address" type="string" />
+	
+		<!-- 所使用的操作系统。 -->
+		<property name="system" column="System" type="string" />
+	
+		<!-- 所使用的浏览器。 -->
+		<property name="browser" column="Browser" type="string" />
+	
+		<!-- 用户屏幕大小。 -->
+		<property name="screen" column="Screen" type="string" />
+	
+		<!-- 用户屏幕色深。 -->
+		<property name="color" column="Color" type="string" />
+	
+		<!-- 来访的前一个页面。 -->
+		<property name="referer" column="Referer" type="string" />
+	
+		<!-- 所在时区。 -->
+		<property name="timezone" column="Timezone" type="int" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chinaedustar.publish.biz">
+	<class name="BizName" table="Biz_Name" >
+		<!-- 主键，自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		
+		<!-- 业务的名字 -->
+		<property name="name" column="Name" type="string" />
+		<!-- 描述 -->
+		<property name="description" column="Description" type="string" />
+		<!-- 所属用户 -->
+		<property name="userList" column="UserList" type="string" />
+		<!-- 所属群组 -->
+		<property name="groupList" column="GroupList" type="string" />
+		
+	</class>
+</hibernate-mapping>

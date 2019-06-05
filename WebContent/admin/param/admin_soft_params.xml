@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<softparams>
+	<!-- 定义软件类型 -->
+	<type>
+		<option>国产软件</option>
+		<option>国外软件</option>
+		<option>汉化补丁</option>
+		<option>程序源码</option>
+		<option>电影下载</option>
+		<option>Flash动画</option>
+		<option>其他</option>
+	</type>
+	<!-- 定义软件语言 -->
+	<language>
+		<option>英文</option>
+		<option>简体中文</option>
+		<option>繁体中文</option>
+		<option>简繁中文</option>
+		<option>多国语言</option>
+		<option>其他语言</option>
+	</language>
+	<!-- 定义软件版权 -->
+	<copyright>
+		<option>免费版</option>
+		<option>共享版</option>
+		<option>试用版</option>
+		<option>演示版</option>
+		<option>注册版</option>
+		<option>破解版</option>
+		<option>零售版</option>
+		<option>OEM版</option>
+	</copyright>
+	<!-- 定义软件运行的操作系统 -->
+	<os>
+		<option>Linux</option>
+		<option>DOS</option>
+		<option>9x</option>
+		<option>95</option>
+		<option>98</option>
+		<option>Me</option>
+		<option>NT</option>
+		<option>2000</option>
+		<option>XP</option>
+		<option>.NET</option>
+	</os>
+</softparams>

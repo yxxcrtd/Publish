@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chinaedustar.publish.model">
+    <class name="WebPage" table="Cor_WebPage">
+    	<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+    	<id name="id" type="int">
+    		<column name="ObjectId" />
+    		<generator class="native" />
+    	</id>
+    	<!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+    	<property name="objectUuid" type="string" update="false">
+    		<column name="ObjectUuid" length="40" not-null="true" />
+    	</property>
+    	<!-- 对象的名字。 -->
+    	<property name="name" type="string">
+    		<column name="Name" length="64" not-null="true" />
+    	</property>
+
+    	<!-- 页面的 Logo. -->
+    	<property name="logo" type="string">
+    		<column name="Logo" />
+    	</property>
+    	<!-- 页面的 Banner. -->
+    	<property name="banner" type="string">
+    		<column name="Banner" />
+    	</property>
+    	<!-- 页面的 Copyright. -->
+    	<property name="copyright" type="string">
+    		<column name="Copyright" />
+    	</property>
+    	<!-- 页面的 MetaKey. -->
+    	<property name="metaKey" type="string">
+    		<column name="MetaKey" />
+    	</property>
+    	<!-- 页面的 MetaDesc -->
+    	<property name="metaDesc" type="string">
+    		<column name="MetaDesc" />
+    	</property>
+    	<!-- 页面使用的模板标识。 -->
+    	<property name="templateId" type="int">
+    		<column name="TemplateId" not-null="true" />
+    	</property>
+    	<!-- 样式标识。 -->
+    	<property name="skinId" type="int">
+    		<column name="SkinId" not-null="true" />
+    	</property>
+
+    	<!-- 所属的频道标识。外键关联到Cor_Channel表。 -->
+    	<property name="channelId" type="int">
+    		<column name="ChannelId" not-null="true" />
+    	</property>
+    	<!-- 父栏目的标识。如果没有父栏目，则此值为 0 。 -->
+    	<property name="parentId" type="int">
+    		<column name="ParentId" not-null="true" />
+    	</property>
+    	<!-- 树形结构的父节点全路径。 -->
+    	<property name="parentPath" type="string">
+    		<column name="ParentPath" not-null="true" />
+    	</property>
+    	<!-- 树形结构的排序全路径。 -->
+    	<property name="orderPath" type="string">
+    		<column name="OrderPath" not-null="true" />
+    	</property>
+    	<!-- 页面的简要提示，不支持html和标签。 -->
+    	<property name="tips" type="string">
+    		<column name="Tips" length="128" />
+    	</property>
+    	<!-- 页面的详细说明，支持html和标签。 -->
+    	<property name="description" type="string">
+    		<column name="Description" />
+    	</property>
+
+    	<!-- 页面标题 -->
+    	<property name="title" column="Title" type="string" />
+
+    	<!-- 打开方式：1：在新窗口打开；0：在原窗口打开。 -->
+    	<property name="openType" type="int" column="OpenType" />
+
+    	<!-- 是否已经生成静态化页面 -->
+    	<property name="isGenerated" column="IsGenerated" type="boolean"
+    		update="false" />
+    	<!-- 静态化页面的地址 -->
+    	<property name="staticPageUrl" column="StaticPageUrl"
+    		type="string" update="false" />
+    	<!-- 自定义属性数量 -->
+    	<property name="customNum" column="CustomNum" type="integer"
+    		update="false" />
+    </class>
+</hibernate-mapping>

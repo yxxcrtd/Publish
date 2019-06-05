@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="FriendSiteKind" table="Ext_FsKind">
+		<!-- 主键，数据库中字段为 KindId, 自动生成。 -->
+		<id name="id" column="KindId" >
+			<generator class="native" />
+		</id>
+		<!-- 对象的名字。 -->
+		<property name="kindName" column="KindName" type="string" length="64" />
+		<property name="kindDesc" column="KindDesc" type="string" />
+	</class>
+</hibernate-mapping>

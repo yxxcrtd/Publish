@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="UpFile" table="Cor_UploadFile" lazy="false" dynamic-update="true" select-before-update="true">
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		<!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+		<property name="objectUuid" column="ObjectUuid" type="string" update="false" />
+		<!-- 对象的名字。 -->
+		<property name="name" column="Name" type="string" />
+		<!-- 上传文件所属的频道。 -->
+		<property name="channelId" column="ChannelId" type="int" />
+		<!-- 上传文件原来的名字，如：集体合影.jpg -->
+		<property name="oldName" column="OldName" type="string" />
+		<!-- 文件的路径，相对于网站的跟目录，如：/PubWeb/news/UploadFiles/2007/03/20070313102012212.txt -->
+		<property name="filePath" column="FilePath" type="string" />
+		<!-- 上传文件的扩展名，如：txt -->
+		<property name="fileExt" column="FileExt" type="string" />
+		<!-- 上传的时间，如：2007-3-13 10:20:39.323 -->
+		<property name="uploadTime" column="UploadTime" type="timestamp" />
+		<!-- 上传人的名称。 -->
+		<property name="userName" column="UserName" type="string" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,405 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/EduP/Skin/css/style.css">
+<link rel="stylesheet" type="text/css" href="/EduP/Skin/css/tabmenu.css"/>
+<title>学生工作系统</title>
+<script language="javascript">
+ function seltab(bpref, hpref, id_max, selected) {
+   if (! document.getElementById) return;
+   for (i = 0; i <= id_max; i++) {
+     if (! document.getElementById(bpref + i)) continue;
+     if (i == selected) {
+
+       
+       document.getElementById(bpref + i).style.visibility = "";
+       document.getElementById(bpref + i).style.visibility = "visible";
+       document.getElementById(bpref + i).style.position = "";
+       document.getElementById(bpref + i).className="";
+       document.getElementById(bpref + i).className="boxopen";
+
+     } else {
+       document.getElementById(bpref + i).style.visibility = "hidden";
+       document.getElementById(bpref + i).style.position = "absolute";
+       document.getElementById(bpref + i).className="boxclose";
+     }
+   }
+ }
+ 
+  
+ function selectType(myspan){
+  for(i=1; i<7; i++){
+  if ("dspan0"+i==myspan){
+      
+      document.getElementById(myspan).style.color="#ff9933";
+    }else
+    {
+       
+      document.getElementById("dspan0"+i).style.color="#3b3b3b";
+    }
+  }//for
+    
+ }
+ 
+
+</script>
+
+<style type="text/css">
+<!--
+.STYLE8 {color: #0C6784}
+.swinfotabs{
+float:left;
+width:100%;
+/*Add border strip to bottom of menu*/
+}
+
+
+-->
+</style>
+
+</head>
+
+<body leftmargin="0" topmargin="0">
+
+<table width="1000" cellpadding="0" cellspacing="0">
+
+	<tr>
+		<td><table width="1000" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="100%" height="28" background="/EduP/Skin/EduP_images/student_r1_c1.jpg"></td>
+	</tr>
+	<tr>
+		<td width="100%" height="178" >
+			<table height="100%" width="100%" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="222" background="/EduP/Skin/EduP_images/student_r2_c1.jpg"></td>
+					<td width="275" background="/EduP/Skin/EduP_images/student_r2_c2.jpg"></td>
+					<td width="278" background="/EduP/Skin/EduP_images/student_r2_c3.jpg"></td>
+					<td width="225" background="/EduP/Skin/EduP_images/student_r2_c4.jpg"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%" height="28" background="/EduP/Skin/EduP_images/student_r3_c1.jpg"></td>
+	</tr>
+</table></td>
+	</tr>
+
+	<tr>
+		<td width="100%" height="740">
+			<table width="100%" height="100%" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="209" background="" valign="top">
+						<table width="100%" height="100%" cellpadding="0" cellspacing="0">
+							<tr>
+								<td height="135" background="/EduP/Skin/EduP_images/student_r4_c1.jpg"></td>
+							</tr>
+							<tr>
+								<td align="center" bgcolor="#FFFFFF" height="600" valign="top">
+								 
+								<script language="JavaScript1.2">
+var head="display:''"
+img1=new Image()
+img1.src="(/EduP/Skin/EduP_images/leftmenuback.gif"
+img2=new Image()
+img2.src="/EduP/Skin/EduP_images/leftmenuback0.gif"
+
+function change(){
+   if(!document.all)
+      return
+   if (event.srcElement.id=="foldheader") {
+      var srcIndex = event.srcElement.sourceIndex
+      var nested = document.all[srcIndex+1]
+      if (nested.style.display=="none") {
+         nested.style.display=''
+         //event.srcElement.style.listStyleImage="url(/EduP/Skin/EduP_images/open.gif)"
+		 event.srcElement.style.backgroundImage="url(/EduP/Skin/EduP_images/leftmenuback0.gif)"
+		  
+      }
+      else {
+         nested.style.display="none";
+		//event.srcElement.style.listStyleImage="url(/EduP/Skin/EduP_images/fold.gif)"
+		 event.srcElement.style.backgroundImage="url(/EduP/Skin/EduP_images/leftmenuback.gif)"
+      }
+   }
+}
+
+    document.onclick=change
+
+//-->
+</script>
+      
+         
+	</head>
+
+<body leftmargin="0" topmargin="0">
+
+<table  width="100%" height="100%" border="0" cellpadding="0" cellspacing="0"  >
+    
+  <tr>
+  	<td background="/EduP/Skin/EduP_images/leftmenuback.gif" style="background-repeat:no-repeat; background-position:center" height="22" align="center" valign="middle">
+		<a href="#" target="parent" class="menu"><font style="position:relative;bottom:0px">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</font></a>
+	</td>
+  </tr>
+   <tr>
+  	<td background="/EduP/Skin/EduP_images/leftmenuback.gif" style="background-repeat:no-repeat; background-position:center" height="40" align="center" valign="middle">
+		<a href="#" target="parent" class="menu"><font style="position:relative;bottom:0px">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陆</font></a>
+	</td>
+  </tr>
+  <tr>
+  <td valign="top" align="left">
+   <li id="foldheader" style="background-image:url(/EduP/Skin/EduP_images/leftmenuback.gif);cursor:hand;background-repeat:no-repeat; list-style:none; width:180;height:30;text-align:center;padding-top:5px;">本科生指导</li>
+	   <ul id="foldinglist" style="margin-left:30;display:none; cursor:auto; vertical-align:bottom;text-align:left;margin-top:10px">
+		  <li id="folderitem" ><a class="menu" href='/EduP/benkeshengzhidao/showColumn.jsp?columnId=101'>本科生培养方案</a></li>
+		  <li id="folderitem" ><a class="menu" href='/EduP/benkeshengzhidao/showColumn.jsp?columnId=102'>本科生指导性教学计划</a></li>
+	   </ul>
+                 
+   
+   <li id="foldheader" style="background-image:url(/EduP/Skin/EduP_images/leftmenuback.gif);cursor:hand;
+background-repeat:no-repeat; list-style:none; width:180;height:30;text-align:center;padding-top:5px;">
+硕士生指导</li>
+
+   <ul id="foldinglist" style="margin-left:30;display:none; cursor:auto; vertical-align:bottom;text-align:left;margin-top:10px">
+      <li id="folderitem"><a class="menu" href="#" target="mainFrame">硕士生培养方案</a></li>
+	  <li id="folderitem"><a class="menu" href="Rewards/List.do?RType=00" target="mainFrame">工程硕士培养方案</a></li>
+	  <li id="folderitem"><a class="menu" href="Rewards/List.do?RType=00" target="mainFrame">同等学力硕士培养方案</a></li>
+	  <ul id="foldinglist" style="margin-left:20;display:list-item; cursor:auto; vertical-align:bottom">
+      <li id="folderitem" ><a class="menu" href="Rewards/List.do?RType=01" target="mainFrame">aaa</a></li>
+      <li id="folderitem" ><a class="menu" href="Rewards/List.do?RType=02" target="mainFrame">sss</a></li>
+      </ul>
+	  <br>
+   </ul>
+
+
+   <li id="foldheader" style="background-image:url(/EduP/Skin/EduP_images/leftmenuback.gif);cursor:hand;background-repeat:no-repeat; list-style:none; width:180;height:30;text-align:center;padding-top:5px;" />
+博士生指导</li>
+   <ul id="foldinglist" style="margin-left:30;display:none; cursor:auto; vertical-align:bottom;text-align:left;margin-top:10px">
+      <li id="folderitem"><a class="menu" href="Punishments/SPunishmentsList.do" target="mainFrame">博士生培养方案</a></li>
+      <li id="folderitem"><a class="menu" href="Punishments/SPunishmentsSumList.do" target="mainFrame">普博生学位必修学分组成</a></li>
+      <li id="folderitem"><a class="menu" href="Punishments/SPunishmentsRulesList.do" target="mainFrame">直博生学位必修学分组成</a></li>
+      <li id="folderitem"><a class="menu" href="Punishments/SPunishmentsRulesList.do" target="mainFrame">论文博士培养方案</a></li>	  
+   </ul>
+  
+     
+</td>
+</tr>
+
+</table>
+
+<script language="JavaScript1.2">
+<!--
+/**
+ * Get cookie routine by Shelley Powers 
+ * (shelley.powers@ne-dev.com)
+ */
+function get_cookie(Name) {
+  var search = Name + "="
+  var returnvalue = "";
+  if (document.cookie.length > 0) {
+    offset = document.cookie.indexOf(search)
+    // if cookie exists
+    if (offset != -1) { 
+      offset += search.length
+      // set index of beginning of value
+      end = document.cookie.indexOf(";", offset);
+      // set index of end of cookie value
+      if (end == -1) end = document.cookie.length;
+      returnvalue=unescape(document.cookie.substring(offset, end))
+      }
+   }
+  return returnvalue;
+}
+
+//
+if (get_cookie(window.location.pathname) != ''){
+  var openresults=get_cookie(window.location.pathname).split(" ")
+  for (i=0 ; i < openresults.length ; i++){
+    foldinglist[openresults[i]].style.display=''
+    //document.all[foldinglist[openresults[i]].sourceIndex -
+    //1].style.backgroundImage="url(/EduP/Skin/EduP_images/leftmenuback0.gif)"
+  }
+}
+
+//
+if (document.all){
+  var nodelength=foldinglist.length-1
+  var nodes=new Array(nodelength)
+  var openones=''
+}
+
+function check(){
+  for (i=0 ; i <= nodelength ; i++){
+    if (foldinglist[i].style.display=='')
+       openones=openones + " " + i
+  }
+  document.cookie=window.location.pathname+"="+openones
+}
+
+if (document.all)
+  document.body.onunload=check
+//-->
+</script></td>
+							</tr>
+						</table>					</td>
+					<td width="30" valign="top" background="/EduP/Skin/EduP_images/student_r5_c2.jpg" style="background-repeat:repeat-y">
+						<table width="100%" height="100%" cellpadding="0" cellspacing="0">
+							<tr>
+								<td height="135" background="/EduP/Skin/EduP_images/student_r4_c2.jpg"></td>
+							</tr>
+							<tr>
+								<td height="605"></td>
+							</tr>
+						</table>	
+					</td>
+					<td width="761" valign="top">
+						<table id="tabtitle" width="100%" height="30" border="0"  cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="15%" valign="bottom">
+                        <div id="head1" class="swinfotabs" >
+                            <a href="javascript:seltab('box', 'head', 10, 1)">
+                            <span id="dspan01" class="tabselected" onClick="selectType('dspan01');">培养目标</span>
+                            </a>
+                                
+                        </div>
+                    </td>
+                    
+                    <td width="15%" valign="bottom" >
+                        <div id="head2" class="swinfotabs">
+                            
+                            <a href="javascript:seltab('box', 'head', 10, 2)">
+                            <span id="dspan02" class="tabNoselected" onClick="selectType('dspan02');">学制与学位授予</span></a>
+                        
+                        </div>
+                   </td>
+                   
+                   <td width="15%" valign="bottom">
+                        <div id="head3" class="swinfotabs">
+                        
+                            <a href="javascript:seltab('box', 'head', 10, 3)">
+                            <span id="dspan03" class="tabNoselected" onClick="selectType('dspan03');">基本学分学时</span></a>
+                           
+                        </div>
+                  </td>
+                   
+                  <td width="15%" valign="bottom">
+                        <div id="head4" class="swinfotabs">
+                       
+                            <a href="javascript:seltab('box', 'head', 10, 4)">
+                            <span id="dspan04" class="tabNoselected" onClick="selectType('dspan04');">课程设置与学分</span></a>
+                          
+                        </div>
+                  </td>
+                   
+				   <td width="15%" valign="bottom">
+                        <div id="head5" class="swinfotabs">
+                       
+                            <a href="javascript:seltab('box', 'head', 10, 5)">
+                            <span  id="dspan05" class="tabNoselected" onClick="selectType('dspan05');">平台课分组目录</span></a>
+                           
+                        </div>
+                  </td>
+			      <td width="15%" valign="bottom">
+                        <div id="head6" class="swinfotabs">
+                       
+                            <a href="javascript:seltab('box', 'head', 10, 6)">
+                            <span  id="dspan06" class="tabNoselected" onClick="selectType('dspan06');">专业课程目录</span></a>
+                        
+                        </div>
+                  </td>
+				
+				  
+                </tr>
+            </table>
+
+        
+         
+   <div class="tabbody">
+    <div id="box1" style="border-top:#62d3d9 solid 2px;border-bottom:#62d3d9 solid 2px;border-left:#62d3d9 solid 2px;
+ border-right:#62d3d9 solid 2px; margin-bottom:0px; margin-left:0px; 
+ margin-right:0px; background-color:#a4e7f0;   border-color:#62d3d9;  ">
+       box1
+	    <table width="100%" class="content_table">
+ 
+  </tr>  
+  <td height="35" bgcolor="#e1f0f2" >司法1</td>
+  <tr>
+  </tr>
+  </table>
+     </div>
+            <div id="box2"  style="border-top:#62d3d9 solid 2px;border-bottom:#62d3d9 solid 2px;border-left:#62d3d9 solid 2px;
+ border-right:#62d3d9 solid 2px; margin-bottom:0px; margin-left:0px; 
+ margin-right:0px; background-color:#a4e7f0;   border-color:#62d3d9;  "  >
+			 box2
+			  <table width="100%" class="content_table">
+ 
+  </tr>  
+  <td height="135" bgcolor="#e1f0f2" >司法2</td>
+  <tr>
+  </tr>
+  </table>
+            </div>
+            <div id="box3" style="border-top:#62d3d9 solid 2px;border-bottom:#62d3d9 solid 2px;border-left:#62d3d9 solid 2px;
+ border-right:#62d3d9 solid 2px; margin-bottom:0px; margin-left:0px; 
+ margin-right:0px; background-color:#a4e7f0;   border-color:#62d3d9;  ">
+                box3
+				 <table width="100%" class="content_table">
+ 
+  </tr>  
+  <td height="135" bgcolor="#e1f0f2" >司法3</td>
+  <tr>
+  </tr>
+  </table>
+            </div>
+            <div id="box4" style="border-top:#62d3d9 solid 2px;border-bottom:#62d3d9 solid 2px;border-left:#62d3d9 solid 2px;
+ border-right:#62d3d9 solid 2px; margin-bottom:0px; margin-left:0px; 
+ margin-right:0px; background-color:#a4e7f0;   border-color:#62d3d9;  ">
+        box4
+		 <table width="100%" class="content_table">
+ 
+  </tr>  
+  <td height="35" bgcolor="#e1f0f2" >司法4</td>
+  <tr>
+  </tr>
+  </table>
+            </div>
+                        <div id="box5" style="border-top:#62d3d9 solid 2px;border-bottom:#62d3d9 solid 2px;border-left:#62d3d9 solid 2px;
+ border-right:#62d3d9 solid 2px; margin-bottom:0px; margin-left:0px; 
+ margin-right:0px; background-color:#a4e7f0;   border-color:#62d3d9;  ">
+        box5
+		 <table width="100%" class="content_table">
+ 
+  </tr>  
+  <td height="35" bgcolor="#e1f0f2" >司法5</td>
+  <tr>
+  </tr>
+  </table>
+            </div>
+                        <div id="box6" style="border-top:#62d3d9 solid 2px;border-bottom:#62d3d9 solid 2px;border-left:#62d3d9 solid 2px;
+ border-right:#62d3d9 solid 2px; margin-bottom:0px; margin-left:0px; 
+ margin-right:0px; background-color:#a4e7f0;   border-color:#62d3d9;  ">
+         box6
+		  <table width="100%" class="content_table">
+ 
+  </tr>  
+  <td height="35" bgcolor="#e1f0f2" >司法6</td>
+  <tr>
+  </tr>
+  </table>
+            </div>
+                       
+        </div>
+        
+  <div>
+ 
+  </div></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%" height="54" background="/EduP/Skin/EduP_images/student_r5_c1.jpg"></td>
+	</tr>
+</table>
+</body>
+</html>

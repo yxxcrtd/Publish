@@ -1,0 +1,8 @@
+# 在这个配置文件中放置自定义标签实现，格式为：标签名字=标签实现类，例如：
+# RefGroup = com.chinaedustar.publish.biz.RefGroupLabel
+# 标签实现类必须实现接口 LabelHandler, LabelModule 如果被加载会读取此配置文件
+#  并初始化所有标签实现类，注册到 LabelHandler Map 中。
+# TEST 是一个测试用 Label.
+TEST = com.chinaedustar.publish.label.TestLabel
+BizUser = com.chinaedustar.publish.biz.BizUserLabel
+BizGroup = com.chinaedustar.publish.biz.BizGroupLabel

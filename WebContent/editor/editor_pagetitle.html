@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> 插入分页标题 </TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="editor_dialog.css">
+<script event=onclick for=Ok language=JavaScript>
+if (pagetitle.value!=null)
+{
+ var str;
+ str="[NextPage" + pagetitle.value + "]";
+ window.returnValue="<br>"+str+"<br><br>";
+}
+ window.close();
+</script>
+</HEAD>
+<BODY bgColor=#D4D0C8 topmargin=15 leftmargin=15 >
+<FIELDSET align=left>
+<LEGEND align=left><strong> 插入分页标题 </strong></LEGEND>
+<TABLE>
+<TR>
+<TD>
+  <Input TYPE="text" id="pagetitle" NAME="pagetitle" size=50></TD>
+<TD>
+  <Input TYPE="submit" value=" 确 定 " id="Ok">
+  <Input TYPE="reset" value=" 取 消 " Onclick="window.close();">
+</TD>
+</TR>
+</table>
+</fieldset>
+</BODY>
+</HTML>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="Log" table="Log_Main" >
+		<!-- 主键，自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+
+		<property name="operation" column="Operation" type="string" />
+		<property name="status" column="Status" type="int" />
+		<property name="operTime" column="OperTime" type="timestamp" />
+		<property name="userName" column="UserName" type="string" />
+		<property name="userIP" column="UserIP" type="string" />
+		<property name="description" column="Description" type="string" />
+		<property name="url" column="Url" type="string" />
+		<property name="postData" column="PostData" type="string" />
+	</class>
+</hibernate-mapping>

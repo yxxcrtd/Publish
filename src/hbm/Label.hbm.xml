@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="Label" table="Cor_Label" dynamic-update="true" lazy="false">
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		<!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+		<property name="objectUuid" column="ObjectUuid" type="string" update="false" />
+		
+		<!-- 对象的名字。 -->
+		<property name="name" column="Name" type="string" length="64" />
+
+		<!-- 标签的分类 -->
+		<property name="labelType" column="LabelType" type="integer" />
+		
+		<!-- 标签的详细说明。 -->
+		<property name="description" column="Description" type="string" />
+		
+		<!-- 解释优先级 -->
+		<property name="priority" column="Priority" type="integer" />
+		
+		<!-- 标签内容。 -->
+		<property name="content" column="Content" type="string" />
+		
+		<!-- 是否已经删除。 -->
+		<property name="deleted" column="Deleted" type="boolean" />
+		
+	</class>
+</hibernate-mapping>

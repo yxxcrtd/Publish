@@ -1,0 +1,66 @@
+﻿
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #ffffff;
+	background-repeat: repeat-x;
+	background-position: top;
+}
+
+td{
+	font-size:12px
+}
+/*
+ul{
+	margin-left:30;
+	display:none; 
+	cursor:auto; 
+	vertical-align:bottom;
+	text-align:left;
+	position:relative;
+	top:30px;
+}
+*/
+
+/*左侧菜单链接样式*/
+	a.menu:link {text-decoration:none;color: #000000;width:130;height:10;padding:2px}
+	a.menu:visited {text-decoration:none;color: #000000;width:130;height:10;padding:2px}
+	a.menu:hover{text-decoration:none;color: #EC960B;width:130;height:10;padding:2px}
+	a.menu:active {text-decoration:none;color: #000000;width:130;height:10;padding:2px}
+
+/*左侧菜单链接样式*/
+	a.menu1:link {text-decoration:none;color: #000000;background-color:#E1F0F2;width:130;height:10;padding:2px}
+	a.menu1:visited {text-decoration:none;color: #000000;background-color:#E1F0F2;width:130;height:10;padding:2px}
+	a.menu1:hover{text-decoration:none;color: #EC960B;background-color:#E1F0F2;width:130;height:10;padding:2px}
+	a.menu1:active {text-decoration:none;color: #000000;background-color:#E1F0F2;width:130;height:10;padding:2px}
+/*主导航菜单样式*/
+	a.main:link {text-decoration:none;color:#000000;font-weight:bold}
+	a.main:visited {text-decoration:none;color:#000000;font-weight:bold}
+	a.main:hover{text-decoration:none;color:#EC960B;font-weight:bold}
+	a.main:active {text-decoration:none;color:#000000;font-weight:bold}
+
+.menubar{
+	 	background:url(images/leftmenuback.gif);
+		width:180px;
+		height:22px;
+		cursor:hand;
+			
+	}
+
+.module1{
+	 	background:url(images/leftmenuback.gif);
+		width:180px;
+		height:22px;
+		cursor:hand;
+			
+	}
+.module2{
+	 	background:url(images/leftmenuback0.gif);
+		width:180px;
+		height:22px;
+		cursor:hand;
+			
+	}

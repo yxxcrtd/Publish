@@ -1,0 +1,288 @@
+<html>
+<head>
+<title>美丽的凤凰</title>
+<meta name="keywords" content="null" />
+<meta name="description" content="null" />
+<meta name="generator" content="Publish 2.0 by www.chinaedustar.com" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="/PubWeb/js/prototype.js"></script>
+<script src="/PubWeb/js/scriptaculous.js"></script>
+<script src="/PubWeb/js/checklogin.js"></script>
+<link href='/PubWeb/Skin/DefaultSkin.css' rel='stylesheet' type='text/css' />
+<script language='JavaScript' type='text/JavaScript' src='/PubWeb/js/menu.js'></script>
+<script language=JavaScript>
+//改变图片大小
+function resizepic(thispic)
+{
+if(thispic.width>700){thispic.height=thispic.height*700/thispic.width;thispic.width=700;} 
+}
+//无级缩放图片大小
+function bbimg(o)
+{
+  var zoom=parseInt(o.style.zoom, 10)||100;
+  zoom+=event.wheelDelta/12;
+  if (zoom>0) o.style.zoom=zoom+'%';
+  return false;
+}
+var IsPlaying=false;
+var PhotoIndex=1;
+function SlidePlay(){
+  var sTimer,url;
+  if(IsPlaying==false){
+    IsPlaying=true;
+    SlideButton.value='停止播放';
+    sTimer=setTimeout("ViewNext()",2000);
+  }else{
+    clearTimeout(sTimer);
+    IsPlaying=false;
+    SlideButton.value='幻灯放映';
+  }
+}
+function ViewNext(){
+  if(IsPlaying==false){return false;}
+  if(PhotoIndex<arrUrl.length){
+    ViewPhoto(arrUrl[PhotoIndex]);
+    PhotoIndex+=1;
+  }
+  if(PhotoIndex>=arrUrl.length){
+    PhotoIndex=0;
+  }
+  var iTimeout=interval.value*1000;
+  if(iTimeout<1000){iTimeout=5000;}
+  sTimer=setTimeout("ViewNext()",iTimeout);
+}
+</script>         
+</head>
+<body>
+<div id=menuDiv style="Z-INDEX: 1000; VISIBILITY: hidden; WIDTH: 1px; POSITION: absolute; HEIGHT: 1px; BACKGROUND-COLOR: #9cc5f8">
+</div>
+<table height=114 cellSpacing=0 cellPadding=0 width=778 align=center background=/PubWeb/Skin/ocean/top_bg.jpg border=0>
+    <tr>
+      <td width=213>
+<a href='http://localhost:8080/PubWeb/' title='中教育星发布系统' target='_blank'
+  ><img src='/PubWeb/images/logo.jpg' width='200' height='60' border='0' /></a></td>
+      <td>
+        <table cellSpacing=0 cellPadding=0 width="100%" border=0>
+          <tr>
+            <td align=right colSpan=2>
+              <table cellSpacing=0 cellPadding=0 align=right border=0>
+                <tr>
+                  <td><a href="/PubWeb/announceList.jsp"><IMG height=25 src="/PubWeb/Skin/ocean/Announce_01.jpg" border="0" alt="网站公告列表"></a></td>
+                  <td class=showa width=280 background=/PubWeb/Skin/ocean/Announce_02.jpg>
+                  <MARQUEE onmouseover=this.stop() onmouseout=this.start() scrollAmount=1 scrollDelay=4 width=430 align="left">
+
+
+<!--
+/**
+ *  ShowAnnounce(style, num, showAuthor, showDate, maxChar) 
+ *  channelId - 公告所在频道的标识。-1：频道公用公告；0：网站首页公告；>0：频道公告
+ *  style -显示方式 1：横向；2：纵向。默认值为1。
+ *  num - 最多显示多少条公告 默认为5。
+ *  showAuthor - 是否显示公告的作者，默认为true。
+ *  showDate - 是否显示公告发布的日期。默认为true。
+ *  maxChar - 公告内容最多字符数。默认为50。
+ *  Options 中的参数
+ *  style -显示方式 1：横向；2：纵向。默认值为1。
+ *  showAuthor - 是否显示公告的作者，默认为true。
+ *  showDate - 是否显示公告发布的日期。默认为true。
+ */
+ -->
+
+ 
+    <div>
+    
+       
+        &nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)"  onclick="javascript:window.open('/PubWeb/showAnnounce.jsp?announceId=7', 'newwindow', 'height=440, width=400, toolbar=no, menubar=no, scrollbars=auto, resizable=no, location=no, status=no')"  title="你们好"
+        >你们好</a>&nbsp;&nbsp;[admin]
+        [2007-05-25]
+      
+    
+    </div>
+ </MARQUEE></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="83%" height=80> 
+<a href='http://localhost:8080/PubWeb/' title='中教育星发布系统'>
+	<img src='/PubWeb/images/banner.jpg' width='468' height='60' border='0'>
+</a></td>
+            <td width="17%">
+              <table height=89 cellSpacing=0 cellPadding=0 width=94 background=/PubWeb/Skin/ocean/topr.gif border=0>
+                <tr>
+                  <td align=middle colSpan=2>
+                    <table height=56 cellSpacing=0 cellPadding=0 width=79 border=0>
+                      <tr>
+                        <td align=middle width=26><IMG height=13 src="/PubWeb/Skin/ocean/arrows.gif" width=13></td>
+                        <td width=68><A class=Bottom href="javascript:window.external.addFavorite('http://localhost:8080/PubWeb/','中教育星发布系统');">加入收藏</A></td>
+                      </tr>
+                      <tr>
+                        <td align=middle><IMG height=13 src="/PubWeb/Skin/ocean/arrows.gif" width=13></td>
+                        <td><A class=Bottom onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://localhost:8080/PubWeb/');" href="#">设为首页</A></td>
+                      </tr>
+                      <tr>
+                        <td align=middle><IMG height=13 src="/PubWeb/Skin/ocean/arrows.gif" width=13></td>
+                        <td><A class=Bottom href="mailto:liukaven1972@vip.sina.com">联系站长</A></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table> 
+  <table cellSpacing=0 cellPadding=0 width=778 align=center border=0>
+    <tr>
+      <td class=menu_s align=middle>
+
+&nbsp;|&nbsp;
+
+  <a class='channel' href='/PubWeb/index.jsp'
+   target='_self'>网站首页</a>&nbsp;|&nbsp;
+
+  <a class='channel' href='/PubWeb/news/index.jsp'
+   target='_self'>新闻中心</a>&nbsp;|&nbsp;
+
+  <a class='channel' href='/PubWeb/soft/index.jsp'
+   target='_self'>下载中心</a>&nbsp;|&nbsp;
+
+  <a class='channel2' href='/PubWeb/photo/index.jsp'
+   target='_self'>图片中心</a>&nbsp;|&nbsp;
+
+  <a class='channel' href='/PubWeb/testarti/index.html'
+   target='_self'>资讯天地</a>&nbsp;|&nbsp;
+</td>
+    </tr>
+    <tr>
+      <td class=top_nav_menu><script src="/PubWeb/js/stm31.js" type="text/javascript"></script>
+<script src="/PubWeb/photo/js/showColumnMenu2.js" type="text/javascript" charset="UTF-8"></script> </td>
+    </tr>
+    <tr>
+      <td><IMG height=7 src="/PubWeb/Skin/ocean/menu_bg2.jpg" width=778></td>
+    </tr>
+    <tr>
+      <td background=/PubWeb/Skin/ocean/addr.jpg height=21>
+        <table cellSpacing=0 cellPadding=0 width="100%" border=0>
+          <tr>
+            <td align=middle width="5%"><IMG height=17 src="/PubWeb/Skin/ocean/arrows2.gif" width=16></td>
+            <td width="95%">
+您现在的位置：
+
+<a href='/PubWeb/index.jsp'>中教育星发布系统</a> >>
+
+<a href='/PubWeb/photo/index.jsp'>图片中心</a> >>
+
+<a href='/PubWeb/photo/showColumn.jsp?columnId=57'>凤凰欢乐谷</a> >>
+图片信息</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td background=/PubWeb/Skin/ocean/addr_line.jpg height=4></td>
+    </tr>
+  </table>
+  <!-- ********网页中部代码开始******** -->
+  <table class=center_tdbgall cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+    <tr>
+      <td class=main_title_760 align=middle><B>美丽的凤凰</B></td>
+    </tr>
+    <tr>
+      <td>
+        <table cellSpacing=5 cellPadding=0 width="100%" border=0>
+          <tr align=middle>
+            <td width="20%">图片作者：</td>
+            <td width="20%">更新时间：2007-06-15 12:13:25.377</td>
+            <td width="20%">查看次数：0</td>
+            <td width="20%">推荐等级：<FONT color=#009900>3</FONT></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class=left_tdbgall vAlign=center align=middle height=30>
+  <Input id=Prev onclick="javascript:window.open('56', '_self');" type=button value=上一组美图 name=Prev> 
+        <Input id=Next onclick="javascript:window.open('56', '_self');" type=button value=下一组美图 name=Next> </td>
+    </tr>
+    <tr>
+      <td class=left_tdbgall vAlign=center align=middle height=400></td>
+    </tr>
+    <tr>
+      <td class=left_tdbgall vAlign=center align=middle height=30>
+  <Input id=Prev onclick="javascript:window.open('56', '_self');" type=button value=上一组美图 name=Prev> 
+  <Input id=Next onclick="javascript:window.open('56', '_self');" type=button value=下一组美图 name=Next> 
+  <Input id=SlideButton onclick=SlidePlay(); type=button value=幻灯放映 name=Prev> 
+        <Input id=interval style="TEXT-ALIGN: center" size=3 value=5 name=interval> 秒 </td>
+    </tr>
+    <tr>
+      <td class=Article_tdbgall align=middle>56</td>
+    </tr>
+    <tr>
+      <td class=main_tdbg_760>
+        <table cellSpacing=0 cellPadding=0 width="100%" border=0>
+          <tr>
+            <td bgColor=#0089f7><STRONG><FONT color=#ffffff>　图片简介：</FONT></STRONG></td>
+          </tr>
+          <tr>
+            <td>杀毒发生</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class=main_shadow></td>
+    </tr>
+  </table>
+  <table cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+    <tr>
+      <td>
+        <table class=main_title_760 cellSpacing=0 cellPadding=0 width="100%" border=0>
+          <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>网友评论：</B>（评论内容只代表网友观点，与本站立场无关！）</td>
+            <td align=right>【<A class=class href="/PubWeb/photo/showComments.jsp?photoId=56" target=_blank>发表评论</A>】</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class=main_tdbg_760></td>
+    </tr>
+  </table>
+  <table class=center_tdbgall height=22 cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+    <tr>
+      <td class=main_shadow>
+
+
+没有任何评论
+</td>
+    </tr>
+  </table>
+  <table class=center_tdbgall cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+    <tr>
+      <td class=main_shadow></td>
+    </tr>
+  </table>
+  <!-- ********网页中部代码结束******** -->
+  <!-- ********网页底部代码开始******** --><table cellSpacing=0 cellPadding=0 width=778 align=center border=0>
+    <tr>
+      <td class=menu_bottombg align=middle>| <A class=Bottom onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://localhost:8080/PubWeb/');" href="#">设为首页</A> | <A class=Bottom href="javascript:window.external.addFavorite('http://localhost:8080/PubWeb/','中教育星发布系统');">加入收藏</A> | <A class=Bottom href="mailto:liukaven1972@vip.sina.com">联系站长</A> | <A class=Bottom href="/PubWeb/friendSite/friendSite.jsp" target=_blank>友情链接</A> | <A class=Bottom href="/PubWeb/copyRight.jsp" target=_blank>版权声明</A> | <A class=Bottom href="/PubWeb/announceList.jsp" target=_blank>网站公告</A> | <a class=Bottom href="http://localhost:8080/PubWeb/admin/admin_login.jsp" target=_blank>管理登陆</a></td>
+    </tr>
+    <tr>
+      <td class=bottom_bg height=80>
+        <table cellSpacing=0 cellPadding=0 width="90%" align=center border=0>
+          <tr>
+            <td><IMG height=80 src="/PubWeb/Skin/ocean/bottom_left.gif" width=9></td>
+            <td align=middle width="80%"><p>版权所有 Copyright by www.chinaedustar.com</p>站长：<A href="mailto:liukaven1972@vip.sina.com">liujunxing</A> </td>
+            <td align=right><IMG height=80 src="/PubWeb/Skin/ocean/bottom_r.gif" width=9></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table> 
+  <!-- ********网页底部代码结束******** --><NOSCRIPT><IFRAME src="*" width=0 height=0></IFRAME></IFRAME></IFRAME></IFRAME></NOSCRIPT><NOSCRIPT><IFRAME src="*" width=0 height=0></IFRAME></IFRAME></IFRAME></IFRAME></NOSCRIPT><NOSCRIPT><IFRAME src='*' Width='0' Height='0'></IFRAME></NOSCRIPT>
+</body>
+</html>

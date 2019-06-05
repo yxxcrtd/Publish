@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+  <title>#{PageTitle}</title>
+  <meta name="keywords" content="#{Meta_Keywords}" />
+  <meta name="description" content="#{Meta_Description}" />
+  <meta name="generator" content="Publish 2.0 by www.chinaedustar.com" />
+  <!-- 
+<__script __src="# {site.installDir}JS/prototype.js"></__script>
+<__script __src="{$InstallDir}JS/scriptaculous.js"></__script>
+<__script __src="{$InstallDir}JS/checklogin.js"></__script>
+{$Skin_CSS} {$MenuJS}
+ -->
+  <link href='#{SiteUrl}index.template.css' rel='stylesheet' type='text/css' />
+</head>
+<body leftmargin=0 topmargin=0 __onmousemove='HideMenu()'>
+
+<div id=menuDiv style="Z-INDEX: 1000; VISIBILITY: hidden; WIDTH: 1px; POSITION: absolute; HEIGHT: 1px; BACKGROUND-COLOR: #9cc5f8"></div>
+
+#{MY_系统自带首页顶}
+#{ShowColumnList channelId="0" columnId="-1" isAsc="true" target="_blank" style="1" depth="0" }
+#{ShowPath}
+  <table cellSpacing=0 cellPadding=0 width=778 align=center border=0>
+    <tr>
+      <td vAlign=top width="180">
+        <table cellSpacing=0 cellPadding=0 width="100%" border=0>
+          <tr>
+	        <td vAlign=top>
+            <table cellSpacing=0 cellPadding=0 width=180 border=0>
+              <tr>
+                <td class=main_title_bs06>专题栏目</td>
+              </tr>
+              <tr>
+                <td class=main_tdbg_bsd06></td>
+              </tr>
+              <tr>
+                <td class=main_tdbg_bs06 vAlign=top height=170>
+	                #{ShowAllSpecial channelId="0" columnId="-1" isAsc="true" target="_blank" style="0" depth="0" }
+                </td>
+              </tr>
+            </table>
+            <br />
+            <table cellSpacing=0 cellPadding=0 width=180 border=0>
+              <tr>
+                <td class=main_title_bs06>最新热门</td>
+              </tr>
+              <tr>
+                <td class=main_tdbg_bsd06></td>
+              </tr>
+              <tr>
+                <td class=main_tdbg_bs06 vAlign=top height=170>
+                #{ShowArticleList channelId="0" columnId="0" isIncludeChild="true" 
+			specialId="0" labelDesc="显示文章标题" articleNum="8" isHot="true" 
+			isElite="false" author="" dateScope="80" 
+			orderBy="lastModified desc" titleCharNum="0" 
+			contentNum="-1" colNum="0" showColumn="false" showPicArticleFlag="false" 
+			showAuthor="0" lastModified="0" showHitNum="0" 
+			showHotFlag="false" showNewFlag="false" showEliteFlag="false" showDescription="0" 
+			showPageLink="false" openType="0" showType="0" picType="0" 
+			cssType="0"  }
+                </td>
+              </tr>
+            </table>
+            <br />
+            <table cellSpacing=0 cellPadding=0 width=180 border=0>
+              <tr>
+                <td class=main_title_bs06>最新推荐</td>
+              </tr>
+              <tr>
+                <td class=main_tdbg_bsd06></td>
+              </tr>
+              <tr>
+                <td class=main_tdbg_bs06 vAlign=top height=170>
+                #{ShowArticleList channelId="0" columnId="0" isIncludeChild="true" 
+			specialId="0" labelDesc="显示文章标题" articleNum="10" isHot="false" 
+			isElite="true" author="" dateScope="80" 
+			orderBy="lastModified desc" titleCharNum="0" 
+			contentNum="-1" colNum="0" showColumn="false" showPicArticleFlag="false" 
+			showAuthor="0" lastModified="0" showHitNum="0" 
+			showHotFlag="false" showNewFlag="false" showEliteFlag="false" showDescription="0" 
+			showPageLink="false" openType="0" showType="0" picType="0" 
+			cssType="0"  }
+                </td>
+              </tr>
+            </table>
+          </td>
+	      </tr>
+	    </table>
+	  </td>
+	  <td valign="top" width="598">
+	    <table cellSpacing=0 cellPadding=0 width="100%" border=0>
+	      <tr>
+            <td align=right>
+              <table cellSpacing=0 cellPadding=0 width=598 border=0>
+                <tr>
+                  <td class=main_title_bs06>文章列表</td>
+                </tr>
+                <tr>
+                  <td class=main_tdbg_bsd06></td>
+                </tr>
+                <tr>
+                  <td class=main_tdbg_bs06 vAlign=top>
+                  #{ShowArticleList channelId="0" columnId="0" isIncludeChild="true" 
+			specialId="0" labelDesc="显示文章标题" articleNum="10" isHot="false" 
+			isElite="false" author="" dateScope="80" 
+			orderBy="lastModified desc" titleCharNum="0" 
+			contentNum="-1" colNum="0" showColumn="true" showPicArticleFlag="true" 
+			showAuthor="0" lastModified="0" showHitNum="0" 
+			showHotFlag="false" showNewFlag="false" showEliteFlag="false" showDescription="0" 
+			showPageLink="true" openType="0" showType="0" picType="0" 
+			cssType="0"  }
+                  </td>
+                </tr>
+              </table>
+              <br />
+              <table cellSpacing=0 cellPadding=0 width=598 border=0>
+                <tr>
+                  <td class=main_title_bs06>最新图片</td>
+                </tr>
+                <tr>
+                  <td class=main_tdbg_bsd06></td>
+                </tr>
+                <tr>
+                  <td class=main_tdbg_bs06 vAlign=top>
+                  #{GetPicArticle channelId="0" columnId="0" isIncludeChild="true" 
+			specialId="0" labelDesc="显示图片标题" articleNum="10" isHot="false" 
+			isElite="false" dateScope="80" 
+			orderBy="lastModified desc" cssType="0" 
+			pictureWith="0" pictureHeight="0" titleCharNum="0" 
+			contentNum="-1" colNum="0" showColumn="true" showPicArticleFlag="true" 
+			showContent="0" lineNum="0"}
+                  </td>
+                </tr>
+              </table>
+              <br />
+              <table cellSpacing=0 cellPadding=0 width=598 border=0>
+                <tr>
+                  <td class=main_title_bs06>站内搜索</td>
+                </tr>
+                <tr>
+                  <td class=main_tdbg_bsd06></td>
+                </tr>
+                <tr>
+                  <td class=main_tdbg_bs06 vAlign=top style="background-color:yellow">
+                  #{MY_显示站内搜索}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2 bgcolor=yellow height=80>
+      ${ShowFriendSite}
+      </td>
+    </tr>
+  </table>
+{$MY_动易2006海蓝网页底}
+</body>
+</html>

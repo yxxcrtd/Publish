@@ -1,0 +1,383 @@
+/* 网站链接总的CSS定义:可定义内容为链接字体颜色、样式等 */
+a {
+	text-decoration: none;
+}
+/* 链接无下划线,有为underline */
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+/* 未访问的链接 */
+a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+/* 已访问的链接 */
+a:hover {
+	color: #ff6600;
+	text-decoration: none;
+}
+/* 鼠标在链接上 */
+a:active {
+	color: #000000;
+	text-decoration: none;
+}
+/* 点击激活链接 */ /* 栏目标题文字链接的CSS定义 */
+a.class:link {
+	color: #ffffff;
+}
+
+a.class:visited {
+	color: #ffffff;
+}
+
+a.class:hover {
+	color: #ffff00;
+}
+
+a.class:active {
+	color: #ffffff;
+}
+
+/* 固定排课表格顶部星期的CSS定义 */
+a.title:link {
+	color: #ffffff;
+}
+
+a.title:visited {
+	color: #ffffff;
+}
+
+a.title:hover {
+	color: #449AE8;
+}
+
+a.title:active {
+	color: #ffffff;
+}
+
+/* 固定排课表格左边周次的CSS定义 */
+a.lefts:link {
+	color: #ffffff;
+}
+
+a.lefts:visited {
+	color: #ffffff;
+}
+
+a.lefts:hover {
+	color: #449AE8;
+}
+
+a.lefts:active {
+	color: #ffffff;
+}
+
+/* 固定排课表格表格内原始时期的CSS定义 */
+a.date:link {
+	color: #000000;
+}
+
+a.date:visited {
+	color: #000000;
+}
+
+a.date:hover {
+	color: #ff6600;
+}
+
+a.date:active {
+	color: #000000;
+}
+
+body {
+	font-family: 宋体, Verdana, Arial, Tahoma, Times New Roman;
+	font-size: 12px;
+	text-decoration: none;
+	line-height: 150%;
+	background: #ffffff;
+	scrollbar-face-color: #2B73F1;
+	scrollbar-highlight-color: #0650D2;
+	scrollbar-shadow-color: #449AE8;
+	scrollbar-3dlight-color: #449AE8;
+	scrollbar-arrow-color: #02338A;
+	scrollbar-track-color: #0650D2;
+	scrollbar-darkshadow-color: #0650D2;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+p {
+	font-family: 宋体, Verdana, Arial, Tahoma, Times New Roman;
+	font-size: 16px;
+}
+
+td {
+	font-family: 宋体;
+	font-size: 9pt;
+	/* line-height: 150%; */
+}
+
+input {
+	font-family: 宋体, Verdana, Arial, Tahoma, Times New Roman;
+	font-size: 12px;
+	height: 20px;
+}
+
+button {
+	font-size: 9pt;
+	height: 20px;
+}
+
+select {
+	font-size: 9pt;
+	height: 20px;
+}
+
+textarea, li, span {
+	font-family: 宋体, Verdana, Arial, Tahoma, Times New Roman;
+	font-size: 12px;
+}
+
+.title {
+	background: #449AE8;
+	color: #ffffff;
+	font-weight: normal;
+}
+
+.border {
+	border: 1px solid #449AE8;
+}
+
+/* 固定排课表格表格的CSS定义开始 */
+.date_border {
+	border: 1px solid;
+}
+
+.date_title {
+	background: #449AE8;
+	color: #ffffff;
+	font-weight: normal;
+}
+
+.date_tdbg {
+	background: #449AE8;
+	color: #ffffff;
+	font-weight: normal;
+}
+
+.style2 {
+	font-size: 10px;
+}
+
+.style3 {
+	font-size: 12px;
+}
+
+/* 固定排课表格表格的CSS定义结束 */ /* 在线比较文件的CSS定义开始 */
+.tdtop {
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+}
+
+.tdinter {
+	border-right: 1px solid #C0C0C0;
+	border-left: 1px solid #C0C0C0;
+	text-align: center;
+}
+
+.tdbg1 {
+	background: #F0F8F0;
+	line-height: 120%;
+}
+
+.title0 {
+	background: #EBEADB;
+	color: #000000;
+	font-weight: normal;
+}
+
+/* 在线比较文件的CSS定义结束 */
+.tdbg {
+	background: #f0f0f0;
+	line-height: 120%;
+}
+
+.tdbgmouseover {
+	background: #BFDFFF;
+	line-height: 120%;
+}
+
+.tdbgmouseout1 {
+	background: #ffffff;
+	line-height: 120%;
+}
+
+.tdbgmouseout2 {
+	background: #F3F3F3;
+	line-height: 120%;
+}
+
+.tdbg2 {
+	background: #E0EEF5;
+	line-height: 120%;
+}
+
+.tdbg5 {
+	background: #E0EEF5;
+	line-height: 120%;
+}
+
+.title3 {
+	width: 80px;
+	background: url('images/titlebg4.gif');
+	line-height: 120%;
+	padding-top: 2px;
+	cursor: hand;
+}
+
+.title4 {
+	width: 80px;
+	background: url('images/titlebg3.gif');
+	color: #ffffff;
+	font-weight: normal;
+	padding-top: 2px;
+	cursor: hand;
+}
+
+.title5 {
+	width: 80px;
+	background: url('images/titlebg2.gif');
+	line-height: 120%;
+	padding-top: 2px;
+	cursor: hand;
+}
+
+.title6 {
+	width: 80px;
+	background: url('images/titlebg1.gif');
+	color: #ffffff;
+	font-weight: normal;
+	padding-top: 2px;
+	cursor: hand;
+}
+
+/*　标题文字发光效果定义，白字深蓝底 */
+.glow {
+ filter:glow(color=#0F42A6,strength=1);
+ dropshadow(Color=#0F42A6,offX=1,offY=1,);
+ width:100%;
+ color:#ffffff;
+ line-height:20 px
+}
+
+/*　标题背景单元格定义，白字深蓝底 */
+.topbg {
+ background:#0650D2;
+ color:#FFFFFF;
+ /*  font-weight:bold;text-align: centen; */
+}
+
+/*  浅色背景定义，用于首页细线 */
+.topbg2 {
+ background:#449AE8;
+}
+
+.bgcolor {
+	background-color: #E1F4EE;
+}
+
+.bginput {
+	background: url("images/txtRule.jpg");
+	background-repeat: repeat-x;
+	font-family: ms shell dlg, tahoma, sans-serif, 宋体;
+	font-size: 12px;
+	border: 1px solid #a7a6aa;
+	height: 20px;
+}
+
+.show_page {
+	text-align: center;
+}
+
+.romNumber {
+	font-size: 9pt;
+	overflow: hidden;
+	background-color: highlight;
+	border-right: 0px;
+	text-align: right;
+	font-weight: bold;
+	color: highlighttext;
+	cursor: default;
+}
+
+.txt_main {
+	font-size: 9pt;
+	scrollbar-face-color: #f6f6f6;
+	scrollbar-highlight-color: #ffffff;
+	scrollbar-shadow-color: #cccccc;
+	scrollbar-3dlight-color: #cccccc;
+	scrollbar-arrow-color: #330000;
+	scrollbar-track-color: #f6f6f6;
+	scrollbar-darkshadow-color: #ffffff;
+}
+
+div#satitle {
+	background-color: #b1c1d1;
+	position: absolute; z-index =2; left = 285; top = 205;
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+}
+
+div#satitle2 {
+	background-color: #b1c1d1;
+	position: absolute;
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+}
+
+div#satitle3 {
+	background-color: #b1c1d1;
+	position: absolute;
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+}
+
+div#satitle4 {
+	background-color: #b1c1d1;
+	position: absolute;
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+}
+
+div#skey {
+	background-color: #b1c1d1;
+	position: absolute;
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+}
+
+div#sauthor {
+	background-color: #b1c1d1;
+	position: absolute;
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+}
+
+div#scopyfrom {
+	background-color: #b1c1d1;
+	position: absolute;
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+}

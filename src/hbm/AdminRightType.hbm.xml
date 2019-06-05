@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="AdminRightType" table="Adm_RightType" dynamic-update="true" select-before-update="true">
+		<!-- 管理员权限类型标识，此标识为PK，由数据库自动生成。 -->
+		<id name="id" column="ID" >
+			<generator class="native" />
+		</id>
+        <!-- 管理员权限的类型名称，类型名称必须唯一。 -->
+        <property name="rightType" column="RightType" type="string"/>
+        <!-- 管理员权限类型所属的权限模块。 -->
+		<property name="rightModuleName" column="RightModuleName" type="string"/>
+		<!-- 管理员权限类型对应的操作类型。 -->
+		<property name="actionTypes" column="ActionTypes" type="string"/>
+		<!-- 管理员权限类型对应的页面。 -->
+		<property name="description" column="Description" type="string"/>
+	</class>
+</hibernate-mapping>

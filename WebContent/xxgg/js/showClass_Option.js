@@ -1,0 +1,1 @@
+document.write("<option value='125'>学术活动日程</option><option value='126'>教学日历</option><option value='127'>会议信息</option><option value='128'>动态新闻</option><option value='129'>教师奖励荣誉</option><option value='130'>学生奖励荣誉</option>");

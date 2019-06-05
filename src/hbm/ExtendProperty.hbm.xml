@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="ExtendProperty" table="Ext_Prop">
+		<!-- 主键，数据库中字段为 KindId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		<!-- 目标对象唯一标识。 -->
+		<property name="targetUuid" column="TargetUuid" type="string" insert="true" update="false" />
+		<!-- 目标对象类型。 -->
+		<property name="targetClass" column="TargetClass" type="string" insert="true" update="false" />
+		<!-- 属性名字。 -->
+		<property name="propName" column="PropName" type="string" insert="true" update="false" />
+		<!-- 属性值类型。 -->
+		<property name="propType" column="PropType" type="string" />
+		<!-- 属性值。 -->
+		<property name="propValue" column="PropValue" type="string" />
+	</class>
+</hibernate-mapping>

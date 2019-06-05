@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="TemplateGroup" table="Tmpl_Group" >
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		
+		<!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+		<property name="objectUuid" column="ObjectUuid" type="string" update="false" />
+		
+		<!-- 对象的名字，名字有特定的规定。 -->
+		<property name="name" column="Name" type="string" length="64" />
+
+		<!-- 此模板分组的显示名，如 '网站通用模板'。 -->
+		<property name="title" column="Title" type="string" />
+		
+		<!-- 使用此模板分组的模块标识 -->
+		<property name="moduleId" column="ModuleId" type="integer" />
+		
+		<!-- 是否是通用分组，非通用分组和一个模块绑定。 -->
+		<property name="isSystem" column="IsSystem" type="boolean" />
+		
+		<!-- 是否禁用。 -->
+		<property name="disabled" column="Disabled" type="boolean" />
+		
+	</class>
+</hibernate-mapping>

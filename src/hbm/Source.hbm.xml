@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="Source" table="Cor_Source">
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		<!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+		<property name="objectUuid" column="ObjectUuid" type="string" update="false" />
+		<!-- 对象的名字。 -->
+		<property name="name" column="Name" type="string" length="64" />
+		
+		<!--  来源的标识，默认为0：属于网站的来源。  -->
+		<property name="channelId" column="ChannelId" type="int" />
+		<!-- 来源的图片。 -->
+		<property name="photo" column="Photo" type="string" />
+		<!-- 描述信息。 -->
+		<property name="description" column="Description" type="string" />
+		<!-- 单位地址。 -->
+		<property name="address" column="Address" type="string" />
+		<!-- 联系电话。 -->
+		<property name="tel" column="Tel" type="string" />
+		<!-- 传真。 -->
+		<property name="fax" column="Fax" type="string" />
+		<!-- 邮箱。 -->
+		<property name="mail" column="Mail" type="string" />
+		<!-- 邮编。 -->
+		<property name="zipCode" column="ZipCode" type="string" />
+		<!-- 主页。 -->
+		<property name="homePage" column="HomePage" type="string" />
+		<!-- 电子邮箱。 -->
+		<property name="email" column="Email" type="string" />
+		<!-- QQ号。 -->
+		<property name="qq" column="QQ" type="int" />
+		<!-- 联系人。 -->
+		<property name="contacterName" column="ContacterName" type="string" />
+		<!-- 来源类型：1：友情站点；2：中文站点；3：外文站点；4：其他站点。	 -->
+		<property name="sourceType" column="SourceType" type="int" />
+		<!-- 最后使用时间。 -->
+		<property name="lastUseTime" column="LastUseTime" type="timestamp" />
+		<!-- 是否已经通过审核。 -->
+		<property name="passed" column="Passed" type="boolean" />
+		<!-- 是否置顶。 -->
+		<property name="top" column="OnTop" type="boolean" />
+		<!-- 是否推荐。 -->
+		<property name="commend" column="IsElite" type="boolean" />
+		<!-- 点击次数。 -->
+		<property name="hits" column="Hits" type="int" />
+		
+		<!-- 是否已经生成静态化页面 -->
+        <property name="isGenerated" column="IsGenerated" type="boolean" />
+        <!-- 静态化页面的地址 -->
+        <property name="staticPageUrl" column="StaticPageUrl" type="string" />
+	</class>
+</hibernate-mapping>

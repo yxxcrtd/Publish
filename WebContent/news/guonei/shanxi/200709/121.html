@@ -1,0 +1,361 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>测试用新闻 index = 20</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="generator" content="Publish 2.0 by www.chinaedustar.com" />
+<script src="/PubWeb/js/prototype.js"></script>
+<script src="/PubWeb/js/scriptaculous.js"></script>
+<script src="/PubWeb/js/checklogin.js"></script>
+<link href='/PubWeb/Skin/DefaultSkin.css' rel='stylesheet' type='text/css' />
+<script language='JavaScript' type='text/JavaScript' src='/PubWeb/js/menu.js'></script>
+<script language="JavaScript" type="text/JavaScript">
+//改变图片大小
+function resizepic(thispic)
+{
+if(thispic.width>700){thispic.height=thispic.height*700/thispic.width;thispic.width=700;} 
+}
+//无级缩放图片大小
+function bbimg(o)
+{
+  var zoom=parseInt(o.style.zoom, 10)||100;
+  zoom+=event.wheelDelta/12;
+  if (zoom>0) o.style.zoom=zoom+'%';
+  return false;
+}
+//双击鼠标滚动屏幕的代码
+var currentpos,timer;
+function initialize()
+{
+timer=setInterval ("scrollwindow ()",30);
+}
+function sc()
+{
+clearInterval(timer);
+}
+function scrollwindow()
+{
+currentpos=document.body.scrollTop;
+window.scroll(0,++currentpos);
+if (currentpos !=document.body.scrollTop)
+sc();
+}
+document.onmousedown=sc
+document.ondblclick=initialize
+
+//更改字体大小
+var status0='';
+var curfontsize=12;
+var curlineheight=18;
+function fontZoomA(){
+  if(curfontsize>8){
+    document.getElementById('fontzoom').style.fontSize=(--curfontsize)+'pt';
+  document.getElementById('fontzoom').style.lineHeight=(--curlineheight)+'pt';
+  }
+}
+function fontZoomB(){
+  if(curfontsize<64){
+    document.getElementById('fontzoom').style.fontSize=(++curfontsize)+'pt';
+  document.getElementById('fontzoom').style.lineHeight=(++curlineheight)+'pt';
+  }
+}
+</script>
+</head>
+<body> 
+<div id=menuDiv style='Z-INDEX: 1000; VISIBILITY: hidden; WIDTH: 1px; POSITION: absolute; HEIGHT: 1px; BACKGROUND-COLOR: #9cc5f8'></div> 
+<!-- ********网页顶部代码开始******** -->
+<table height=114 cellSpacing=0 cellPadding=0 width=778 align=center background=/PubWeb/Skin/ocean/top_bg.jpg border=0>
+  <tr>
+    <td width=213><a href='http://localhost:8080/PubWeb/' title='中教育星发布系统' target='_blank'
+  ><img src='/PubWeb/images/logo.jpg' width='200' height='60' border='0' /></a></td>
+    <td>
+      <table cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <tr>
+          <td align=right colSpan=2>
+            <table cellSpacing=0 cellPadding=0 align=right border=0>
+              <tr>
+                <td><a href="/PubWeb/announceList.jsp"><IMG height=25 src="/PubWeb/Skin/ocean/Announce_01.jpg" border="0" alt="网站公告列表"></a></td>
+                <td class=showa width=280 background=/PubWeb/Skin/ocean/Announce_02.jpg>
+                <MARQUEE onmouseover=this.stop() onmouseout=this.start() scrollAmount=1 scrollDelay=4 width=430 align="left"><span>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:void(0);' onclick="javascript:window.open('/PubWeb/showAnnounce.jsp?announceId=14', 'newwindow', 'height=440, width=400, toolbar=no, menubar=no, scrollbars=auto, resizable=no, location=no, status=no')"  
+     title="欢迎来到新闻中心，请点击下面的子栏目查看更多新闻。">欢迎来到新闻中心</a>
+   &nbsp;&nbsp;[admin][2007-09-01 12:00:00]</span>
+</MARQUEE></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="83%" height=80><a href='http://localhost:8080/PubWeb/' title='中教育星发布系统'
+ ><img src='/PubWeb/images/banner.jpg' width='468' height='60' border='0' /></a></td>
+          <td width="17%">
+            <table height=89 cellSpacing=0 cellPadding=0 width=94 background=/PubWeb/Skin/ocean/topr.gif border=0>
+              <tr>
+                <td align=middle colSpan=2>
+                  <table height=56 cellSpacing=0 cellPadding=0 width=79 border=0>
+                    <tr>
+                      <td align=middle width=26><IMG height=13 src="/PubWeb/Skin/ocean/arrows.gif" width=13></td>
+                      <td width=68><A class=Bottom href="javascript:window.external.addFavorite('http://localhost:8080/PubWeb/','中教育星发布系统');">加入收藏</A></td>
+                    </tr>
+                    <tr>
+                      <td align=middle><IMG height=13 src="/PubWeb/Skin/ocean/arrows.gif" width=13></td>
+                      <td><A class=Bottom onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://localhost:8080/PubWeb/');" href="#">设为首页</A></td>
+                    </tr>
+                    <tr>
+                      <td align=middle><IMG height=13 src="/PubWeb/Skin/ocean/arrows.gif" width=13></td>
+                      <td><A class=Bottom href="mailto:webmaster@chinaedustar.com">联系站长</A></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table><table cellSpacing=0 cellPadding=0 width=778 align=center border=0>
+    <tr>
+      <td class=menu_s align=middle>&nbsp;|&nbsp;
+<a class='channel' href='http://localhost:8080/PubWeb/index.jsp' target='_self'>网站首页</a>&nbsp;|&nbsp;
+<a class='channel2' href='http://localhost:8080/PubWeb/news/index.html' target='_self'>新闻中心</a>&nbsp;|&nbsp;
+<a class='channel' href='http://localhost:8080/PubWeb/photo/index.jsp' target='_self'>图片中心</a>&nbsp;|&nbsp;
+<a class='channel' href='http://localhost:8080/PubWeb/soft/index.jsp' target='_self'>下载中心</a>&nbsp;|&nbsp;
+</td>
+    </tr>
+    <tr>
+      <td class=top_nav_menu>
+        <script src='http://localhost:8080/PubWeb/js/stm31.js' type='text/javascript'></script>
+<script src="http://localhost:8080/PubWeb/news/js/showColumnMenu.js" type='text/javascript'></script>
+</td>
+    </tr>
+    <tr>
+      <td><IMG height=7 src="/PubWeb/Skin/ocean/menu_bg2.jpg" width=778></td>
+    </tr>
+    <tr>
+      <td background=/PubWeb/Skin/ocean/addr.jpg height=21>
+        <table cellSpacing=0 cellPadding=0 width="100%" border=0>
+          <tr>
+            <td align=middle width="5%"><IMG height=17 src="/PubWeb/Skin/ocean/arrows2.gif" width=16></td>
+            <td width="95%">您现在的位置：
+<a href='http://localhost:8080/PubWeb/index.jsp'>中教育星发布系统</a><span> &gt;&gt; </span>
+<a href='http://localhost:8080/PubWeb/news/index.html'>新闻中心</a><span> &gt;&gt; </span>
+<a href='http://localhost:8080/PubWeb/news/guonei/index.html'>国内新闻</a><span> &gt;&gt; </span>
+<a href='http://localhost:8080/PubWeb/news/guonei/shanxi/index.html'>社会新闻</a><span> &gt;&gt; </span>
+<a href='http://localhost:8080/PubWeb/news/guonei/shanxi/200709/121.html'></a><span> &gt;&gt; </span>
+正文</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td background=/PubWeb/Skin/ocean/addr_line.jpg height=4></td>
+    </tr>
+  </table>
+<!-- ********网页顶部代码结束******** --> 
+<!-- ********网页中部代码开始******** -->
+<table class=center_tdbgall style="WORD-BREAK: break-all" cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+  <tr>
+    <td colSpan=2>
+      <table class=main_title_760 style="WORD-BREAK: break-all" cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <tr>
+          <td vAlign=center><table class=main_title_760 style="WORD-BREAK: break-all" cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <tr>
+    <td vAlign=center width="4%">&nbsp;</td>
+    <td width="62%">
+      <b><span class="S_headline3"></span>测试用新闻 index = 20</b>
+    </td>
+    <td width="21%">
+      <font color='#009999'></font>
+    </td>
+    <td align=right width="13%">
+      <font color=red>【字体：<A href="javascript:fontZoomA();">小</A> 
+        <A href="javascript:fontZoomB();">大</A>】</font>
+    </td>
+  </tr>
+</table></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr vAlign=center align=middle>
+    <td class=main_ArticleTitle style="WORD-BREAK: break-all" colSpan=2 height=50>测试用新闻 index = 20</td>
+  </tr>
+  <tr vAlign=center align=middle>
+    <td class=main_ArticleSubheading style="WORD-BREAK: break-all" colSpan=2></td>
+  </tr>
+  <tr align=middle>
+    <td class=Article_tdbgall colSpan=2>作者：tester　文章来源：null　点击数：<script type='text/javascript' src='http://localhost:8080/PubWeb/news/showHits.jsp?itemId=121'></script>　更新时间：2007-08-27 14:47&nbsp;&nbsp;&nbsp;&nbsp;<A title='添加此文章到收藏夹' href="javascript:window.external.addFavorite('http://localhost:8080/PubWeb/news/guonei/shanxi/200709/121.html', '测试用新闻 index = 20')"><IMG src="/PubWeb/images/vivi_coop1.gif" border=0 align=absMiddle></A></td>
+  </tr>
+  <tr>
+    <td class=main_tdbg_760 style="WORD-BREAK: break-all" vAlign=top colSpan=2 height=300>
+      <table cellSpacing=0 cellPadding=10 align=center border=0 width='85%'>
+      <tr>
+        <td name='fontzoom' id='fontzoom' style='font-size:12pt;'>测试用新闻 index = 20 的内容</td>
+      </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class=Article_tdbgall align=right colSpan=2>录入：&nbsp;&nbsp;编辑：&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td width=5></td>
+    <td width=752>
+      <div>上一篇文章：<a href = "http://localhost:8080/PubWeb/news/guonei/shanxi/200709/122.html">测试用新闻 index = 21</a></div>
+      <div>下一篇文章：<a href = "http://localhost:8080/PubWeb/news/guonei/shanxi/200709/120.html">测试用新闻 index = 19</a></div>
+    </td>
+  </tr>
+  <tr class=Article_tdbgall align=right>
+    <td colSpan=2><a href=''>【告诉好友】<a href='javascript:print();'>【打印此文】<a href='javascript:close();'>【关闭窗口】</a></td>
+  </tr>
+</table>
+<table class=center_tdbgall cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+  <tr>
+    <td class=main_shadow></td>
+  </tr>
+</table>
+<!--文章显示代码结束-->
+<!--最新热点、最新推荐、相关文章代码开始-->
+<table class=center_tdbgall style="WORD-BREAK: break-all" cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+  <tr>
+    <td class=main_title_282 width="50%"><B>最新热点</B></td>
+    <td width=5 rowSpan=2></td>
+    <td class=main_title_282 width="50%"><B>最新推荐</B></td>
+  </tr>
+  <tr>
+    <td class=main_tdbg_760 vAlign=top height=100>
+      <table border="0" cellspacing="0" cellspadding="0" width="100%">
+ </table>
+
+<div align="center">
+</div>
+</td>
+    <td class=main_tdbg_760 vAlign=top width="33%">
+      <table border="0" cellspacing="0" cellspadding="0" width="100%">
+ </table>
+
+<div align="center">
+</div>
+</td>
+  </tr>
+</table>
+<table class=center_tdbgall cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+  <tr>
+    <td class=main_shadow></td>
+  </tr>
+</table>
+<!--最新热点、最新推荐、相关文章代码结束-->
+<!--网友评论代码开始-->
+<table class=center_tdbgall style="WORD-BREAK: break-all" cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+  <tr class=main_title_760>
+    <td height=25>　　<STRONG>网友评论：</STRONG><SPAN style="COLOR: #ff0000">（只显示最新10条。评论内容只代表网友观点，与本站立场无关！） </SPAN></td>
+  </tr>
+  <tr>
+    <td class=main_tdbg_760><script language="javascript" src="{$InstallDir}{$ChannelDir}/Comment.asp?Action=JS&CommentNum=10&ArticleID={$ArticleID}"></script></td>
+  </tr>
+</table>
+<table width="760" height="22" border="0" align="center" cellpadding="0" cellspacing="0" class="center_tdbgall"> 
+  <tr> 
+    <td Class="main_shadow">没有任何评论
+</td> 
+  </tr> 
+</table> 
+<table cellSpacing=0 cellPadding=0 width=778 align=center bgColor=#ffffff border=0>
+  <tr>
+    <td>
+      <table height=27 cellSpacing=0 cellPadding=0 width=774 align=center border=0>
+        <tr>
+          <td width=29><IMG height=27 src="/PubWeb/Skin/ocean/links_01.gif" width=29></td>
+          <td class=mainBlinks>友情链接</td>
+          <td width=9><IMG height=27 src="/PubWeb/Skin/ocean/links_03.gif" width=9></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>        
+     <table cellpadding="0" cellspacing="2" width="100%">
+<tr>
+  <td>
+	<a href="http://www.chinaedustar.com/" target="_blank" title="网站名称：中教育星教育软件技术公司&#13;网站地址：http://www.chinaedustar.com/&#13;网站简介：">
+	    	<img src="http://www.chinaedustar.com/Government/Resources/image/logo.jpg" width="88" height="31" border="0"/></a>
+    </td>
+  <td>
+	<a href="http://www.sina.com.cn" target="_blank" title="网站名称：新浪&#13;网站地址：http://www.sina.com.cn&#13;网站简介：">
+	    	<img src="http://image2.sina.com.cn/home/07index/sinahome_ws_009.gif" width="88" height="31" border="0"/></a>
+    </td>
+  <td>
+	<a href="http://www.163.com" target="_blank" title="网站名称：网易&#13;网站地址：http://www.163.com&#13;网站简介：">
+	    	<img src="http://images.163.com/homepage/logo.gif" width="88" height="31" border="0"/></a>
+    </td>
+  <td>
+	<a href="http://www.sohu.com" target="_blank" title="网站名称：搜狐&#13;网站地址：http://www.sohu.com&#13;网站简介：">
+	    	<img src="http://images.sohu.com/uiue/sohu_logo/beijing2008/sohu.gif" width="88" height="31" border="0"/></a>
+    </td>
+  <td>
+	<a href="/PubWeb/friendSite/friendSiteReg.jsp" target="_blank"  title="点击申请"><img src="/PubWeb/images/nologo.gif" border="0"/></a>
+	  </td>
+  <td>
+	<a href="/PubWeb/friendSite/friendSiteReg.jsp" target="_blank"  title="点击申请"><img src="/PubWeb/images/nologo.gif" border="0"/></a>
+	  </td>
+  <td>
+	<a href="/PubWeb/friendSite/friendSiteReg.jsp" target="_blank"  title="点击申请"><img src="/PubWeb/images/nologo.gif" border="0"/></a>
+	  </td>
+  </tr>
+<tr>
+  <td>
+	<a href="/PubWeb/friendSite/friendSiteReg.jsp" target="_blank"  title="点击申请"><img src="/PubWeb/images/nologo.gif" border="0"/></a>
+	  </td>
+  <td>
+	<a href="/PubWeb/friendSite/friendSiteReg.jsp" target="_blank"  title="点击申请"><img src="/PubWeb/images/nologo.gif" border="0"/></a>
+	  </td>
+  <td>
+	<a href="/PubWeb/friendSite/friendSiteReg.jsp" target="_blank"  title="点击申请"><img src="/PubWeb/images/nologo.gif" border="0"/></a>
+	  </td>
+  <td>
+	<a href="/PubWeb/friendSite/friendSiteReg.jsp" target="_blank"  title="点击申请"><img src="/PubWeb/images/nologo.gif" border="0"/></a>
+	  </td>
+  <td>
+	<a href="/PubWeb/friendSite/friendSiteReg.jsp" target="_blank"  title="点击申请"><img src="/PubWeb/images/nologo.gif" border="0"/></a>
+	  </td>
+  <td>
+	<a href="/PubWeb/friendSite/friendSiteReg.jsp" target="_blank"  title="点击申请"><img src="/PubWeb/images/nologo.gif" border="0"/></a>
+	  </td>
+  <td>
+	<a href="/PubWeb/friendSite/friendSiteReg.jsp" target="_blank"  title="点击申请"><img src="/PubWeb/images/nologo.gif" border="0"/></a>
+	  </td>
+  </tr>
+</table>
+</td>
+  </tr>
+</table><table cellSpacing=0 cellPadding=0 width=778 align=center border=0>
+  <tr>
+    <td class=menu_bottombg align=middle>
+     | <A class=Bottom onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://localhost:8080/PubWeb/');" 
+        href="#">设为首页</A> 
+     | <A class=Bottom href="javascript:window.external.addFavorite('http://localhost:8080/PubWeb/','中教育星发布系统');">加入收藏</A> 
+     | <A class=Bottom href="mailto:webmaster@chinaedustar.com">联系站长</A> 
+     | <A class=Bottom href="/PubWeb/friendSite/friendSite.jsp" target=_blank>友情链接</A> 
+     | <A class=Bottom href="/PubWeb/copyRight.jsp" target=_blank>版权声明</A> 
+     | <A class=Bottom href="/PubWeb/announceList.jsp" target=_blank>网站公告</A> 
+     | <a class=Bottom href="http://localhost:8080/PubWeb/admin/admin_login.jsp" target=_blank>管理登陆</a></td>
+  </tr>
+  <tr>
+    <td class=bottom_bg height=80>
+      <table cellSpacing=0 cellPadding=0 width="90%" align=center border=0>
+        <tr>
+            <td><IMG height=80 src="/PubWeb/Skin/ocean/bottom_left.gif" width=9></td>
+            <td align=middle width="80%">
+              <div>版权所有 Copyright by <a href='http://www.chinaedustar.com/'>www.chinaedustar.com</a></div>
+              <div>站长：<A href="mailto:webmaster@chinaedustar.com">webmaster</A></div>
+            </td>
+            <td align=right><IMG height=80 src="/PubWeb/Skin/ocean/bottom_r.gif" width=9></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table></body>
+</html>
+<!-- Powered by www.chinaedustar.com JPublish 1.0 -->

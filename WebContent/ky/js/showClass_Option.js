@@ -1,0 +1,1 @@
+document.write("<option value='114'>科研信息</option><option value='115'>研究方向</option><option value='116'>研究所</option><option value='117'>重点实验室</option><option value='118'>研究成果</option><option value='119'>研究会议</option>");

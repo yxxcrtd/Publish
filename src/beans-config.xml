@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN" 
+ "http://www.springframework.org/dtd/spring-beans.dtd">
+ 
+<beans>
+	<bean id="blog_db" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url" value="jdbc:sqlserver://192.168.16.64;DatabaseName=Tsinghua" />
+		<property name="username" value="sa" />
+		<property name="password" value="123456" />
+	</bean>
+
+	<bean id="biz_sf" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean" destroy-method="close">
+		<property name="dataSource">
+			<ref bean="blog_db" />
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>hbm/BizName.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="biz_dao" class="com.chinaedustar.publish.impl.StandardPublishDao">
+		<property name="sessionFactory">
+			<ref bean="biz_sf" />
+		</property>
+	</bean>
+
+	<!-- for get user/group info, the blog_db is data source。 -->
+	<bean id="biz_user_dao" class="com.chinaedustar.publish.biz.UserDaoBean">
+		<property name="dataSource">
+			<ref bean="blog_db" />
+		</property>
+	</bean>
+
+	<!-- 选择用户/群组信息的 bean -->
+	<bean id="biz_sel_dao" class="com.chinaedustar.publish.biz.SelectUserDaoBean">
+		<property name="dataSource">
+			<ref bean="blog_db" />
+		</property>
+	</bean>
+
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+
+	<!-- Local Apache Commons DBCP DataSource that refers to a combined database -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url" value="jdbc:sqlserver://192.168.16.64;DatabaseName=Tsinghua_Site" />
+		<property name="username" value="sa" />
+		<property name="password" value="123456" />
+	</bean>
+
+	<!-- Hibernate sessionFactory object. -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean" destroy-method="close">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>hbm/Site.hbm.xml</value>
+				<value>hbm/Module.hbm.xml</value>
+				<value>hbm/Channel.hbm.xml</value>
+				<value>hbm/Column.hbm.xml</value>
+				<value>hbm/Item.hbm.xml</value>
+				<value>hbm/Special.hbm.xml</value>
+				<value>hbm/Author.hbm.xml</value>
+				<value>hbm/Source.hbm.xml</value>
+				<value>hbm/Keyword.hbm.xml</value>
+				<value>hbm/RefSpecialItem.hbm.xml</value>
+				<value>hbm/Label.hbm.xml</value>
+				<value>hbm/UpFile.hbm.xml</value>
+				<value>hbm/TemplateTheme.hbm.xml</value>
+				<value>hbm/TemplateType.hbm.xml</value>
+				<value>hbm/TemplateGroup.hbm.xml</value>
+				<value>hbm/Template.hbm.xml</value>
+				<value>hbm/Layout.hbm.xml</value>
+				<value>hbm/Admin.hbm.xml</value>
+				<value>hbm/AdminRight.hbm.xml</value>
+				<value>hbm/AdminRightType.hbm.xml</value>
+				<value>hbm/Comment.hbm.xml</value>
+				<value>hbm/Announce.hbm.xml</value>
+				<value>hbm/User.hbm.xml</value>
+				<value>hbm/Skin.hbm.xml</value>
+				<value>hbm/FriendSite.hbm.xml</value>
+				<value>hbm/FsKind.hbm.xml</value>
+				<value>hbm/FsSpecial.hbm.xml</value>
+				<value>hbm/Vote.hbm.xml</value>
+				<value>hbm/Feedback.hbm.xml</value>
+				<value>hbm/ExtendProperty.hbm.xml</value>
+				<value>hbm/WebPage.hbm.xml</value>
+				<value>hbm/Log.hbm.xml</value>
+				<value>hbm/BizName.hbm.xml</value>
+				<value>hbm/StatVisitor.hbm.xml</value>
+				<value>hbm/Student.hbm.xml</value>
+				<value>hbm/Grade.hbm.xml</value>
+				<value>hbm/Class.hbm.xml</value>
+				<value>hbm/Institute.hbm.xml</value>
+				<value>hbm/Teacher.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- Transaction manager for a Hibernate SessionFactory -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- Publish Basic DAO Object -->
+	<bean id="dao" class="com.chinaedustar.publish.impl.StandardPublishDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- Business Object -->
+	<bean id="businessObject" class="com.chinaedustar.publish.impl.TransactionProxyImpl">
+		<!-- -->
+	</bean>
+
+	<!-- Transaction Support Object -->
+	<bean id="proxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="proxyInterfaces">
+			<list>
+				<value>com.chinaedustar.publish.TransactionProxy</value>
+			</list>
+		</property>
+		<property name="target">
+			<ref bean="businessObject" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<!-- all method support transaction -->
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

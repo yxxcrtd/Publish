@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chinaedustar.publish.pjo">
+	<class name="Layout" table="Tmpl_Layout" >
+		<!-- 主键，自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+
+		<!-- 对象唯一标识。 -->
+		<property name="objectUuid" column="ObjectUuid" type="string" />
+		<!-- 此布局的名称。 -->
+		<property name="name" column="Name" type="string" />
+		<!-- 此布局的描述 -->
+		<property name="description" column="Description" type="string" />
+		<!-- 布局的内容。 -->
+		<property name="content" column="Content" type="string" />
+		
+	</class>
+</hibernate-mapping>

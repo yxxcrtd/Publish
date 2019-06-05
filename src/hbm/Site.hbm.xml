@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="Site" table="Cor_Site">
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		<!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+		<property name="objectUuid" column="ObjectUuid" type="string" update="false" />
+		<!-- 对象的名字。 -->
+		<property name="name" column="Name" type="string" length="64" />
+		
+		<!-- 页面的 Logo. -->
+		<property name="logo" column="Logo" type="string" length="255" />
+		<!-- 页面的 Banner. -->	
+		<property name="banner" column="Banner" type="string" length="255" />
+		<!-- 页面的 Copyright, SQL 里面是 ntext 能正确获取吗？. -->	
+		<property name="copyright" column="Copyright" type="string" />
+		<!-- 页面的 MetaKey. -->
+		<property name="metaKey" column="MetaKey" type="string" length="255" />
+		<!-- 页面的 MetaDesc -->
+		<property name="metaDesc" column="MetaDesc" type="string" length="255" />
+		<!-- 页面使用的模板标识。 -->
+		<property name="templateId" column="TemplateId" type="int" />
+		<!-- 样式标识。 -->
+		<property name="skinId" column="SkinId" type="int" />
+
+		<!-- 网站的标题。 -->
+		<property name="title" column="Title" type="string" />
+		<!-- 站点地址。 -->
+		<property name="url" column="Url" type="string" />
+		<!-- 安装的目录位置. -->
+		<property name="installDir" column="InstallDir" type="string" />
+		<!-- 网站管理员的名字。 -->
+		<property name="webmaster" column="Webmaster" type="string" />
+		<!-- 网站管理员的电子邮件地址。 -->
+		<property name="webmasterEmail" column="WebmasterEmail" type="string" />
+		<!--网站热点的点击数最小值-->
+		<property name="hitsOfHot" column="HitsOfHot" type="int" />
+		<!-- 弹出公告窗口的间隔时间。 -->
+		<property name="announceCookieTime" column="AnnounceCookieTime" type="int" />
+		<!-- 是否显示网站频道。 -->
+		<property name="showSiteChannel" column="ShowSiteChannel" type="int" />
+		<!--是否显示管理登陆链接。 -->
+		<property name="showAdminLogin" column="ShowAdminLogin" type="int" />
+		<!--是否保存远程图片到本地。 -->
+		<property name="enableSaveRemote" column="EnableSaveRemote" type="int" />
+		<!--是否开放友情链接申请。 -->
+		<property name="enableLinkReg" column="EnableLinkReg" type="int" />
+		<!--是否统计友情链接点击数。 -->
+		<property name="enableCountFriendSiteHits" column="EnableCountFriendSiteHits" type="int" />
+		<!--是否使用频道、栏目、专题自设内容。-->
+		<property name="enableSoftKey" column="EnableSoftKey" type="int" />
+		<!--网站首页的扩展名。-->
+		<property name="fileExt_SiteIndex" column="FileExt_SiteIndex" type="int" />
+		<!--全站专题的扩展名。 -->
+		<property name="fileExt_SiteSpecial" column="FileExt_SiteSpecial" type="int" />
+		<!--链接地址方式。 -->
+		<property name="siteUrlType" column="SiteUrlType" type="int" />
+		
+		<!-- 权限标志。 -->
+		<property name="privilegeFlag" column="Privilege" type="int" />
+		<!-- 计费标志。 -->
+		<property name="chargeFlag" column="Charge" type="int" />
+		<!-- 自定义信息标志。 -->
+		<property name="customFlag" column="Custom" type="int" />
+		
+		<!-- 是否已经生成静态化页面 -->
+      <property name="isGenerated" column="IsGenerated" type="boolean" update="false" />
+      <!-- 静态化页面的地址 -->
+      <property name="staticPageUrl" column="StaticPageUrl" type="string" update="false" />
+      <!-- 最后一次生成的时间 -->
+		<property name="lastGenerated" column="LastGenerated" type="timestamp" update="false" />
+		
+		<!-- 是否是主站点标志 -->
+		<property name="mainSite" column="MainSite" type="boolean" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+	Copyright 中教育星教育软件有限公司(http://www.chinaedustar.com/) 2006-2007
+-->
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	
+	<!-- 说明头。 -->
+	<description>中教育星发布系统标签库 1.0.0</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>PublishTaglib</short-name>
+	<uri>/PublishTaglib</uri>
+
+	<!-- 测试用DIV标签。 -->
+	<tag>
+		<description>测试用DIV标签</description>
+		<name>show_tmpl_page</name>
+		<tag-class>com.chinaedustar.publish.tag.ShowTemplatePageTag</tag-class>
+		<body-content>empty</body-content>
+	
+		<attribute>
+			<description>要执行的模板的名字</description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- 定义标签，其不产生任何输出。 -->
+	<tag>
+		<description>定义标签，其不产生任何输出</description>
+		<name>declare</name>
+		<tag-class>com.chinaedustar.publish.tag.DeclareTag</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+	
+	<!-- 测试用包装一个模板的标签 -->
+	<tag>
+		<description>测试用包装一个模板的标签</description>
+		<name>tmpl_debug</name>
+		<tag-class>com.chinaedustar.publish.tag.TemplateDebugShowTag</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+	
+	<!-- template 标签定义 -->
+	<tag>
+		<description>定义一个模板</description>
+		<name>template</name>
+		<tag-class>com.chinaedustar.publish.tag.TemplateTag</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<description>the template's name</description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>is debug output the template</description>
+			<name>debug</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+	</tag>
+
+	<!-- process_template 标签定义 -->
+	<tag>
+		<description>执行指定名字的模板。</description>
+		<name>process_template</name>
+		<tag-class>com.chinaedustar.publish.tag.ProcessTemplateTag</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<description>待执行的模板的名字。</description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- template_debug 标签定义 -->
+	<tag>
+		<description>模板调试信息输出的标签</description>
+		<name>template_debug</name>
+		<tag-class>com.chinaedustar.publish.tag.TemplateDebugTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+	
+	<!-- pub:page_debug 标签定义 -->
+	<tag>
+		<description>页面 PageContext 调试信息输出的标签</description>
+		<name>page_debug</name>
+		<tag-class>com.chinaedustar.publish.tag.PageContextDebugTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+	
+	<!-- pub:menu 标签定义 -->
+	<tag>
+		<description>定义 Menu 数据的标签</description>
+		<name>menu</name>
+		<tag-class>com.chinaedustar.publish.tag.MenuTag</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<description>构造好了之后菜单在 PageContext 环境中的变量名</description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>此菜单在构建好之后是否激发 PublishContext 里面的 onMenuShow 事件。</description>
+			<name>event</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		
+		<attribute>
+			<description>菜单的文字，一般给出一个文字比较便于调试。</description>
+			<name>text</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- pub:submenu 标签定义 -->
+	<tag>
+		<description>定义 SubMenu 数据的标签</description>
+		<name>submenu</name>
+		<tag-class>com.chinaedustar.publish.tag.SubMenuTag</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<description>此子菜单的后面引用的唯一标识。</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>此子菜单的显示文字，必须提供。</description>
+			<name>text</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>此子菜单所用的图标或图片 url 地址，可选。</description>
+			<name>icon</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>此子菜单所用的链接地址，可选。</description>
+			<name>url</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- pub:menuitem 标签定义 -->
+	<tag>
+		<description>定义 MenuItem 数据的标签</description>
+		<name>menuitem</name>
+		<tag-class>com.chinaedustar.publish.tag.MenuItemTag</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<description>此菜单项的显示文字，必须提供。</description>
+			<name>text</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>此菜单项点击链接地址，必须提供。</description>
+			<name>url</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>点击菜单项之后打开的窗口位置，缺省为自己。</description>
+			<name>target</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>是否是一个行分隔符。</description>
+			<name>lineBreak</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		
+		<attribute>
+			<description>是否下一个项目显示在新行，缺省为 false。</description>
+			<name>itemBreak</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		
+		<attribute>
+			<description>权限验证字符串，格式为 'target.operation', 如 'site.label_manage'。</description>
+			<name>right</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- pub:sourcemenuitem 标签定义 -->
+	<tag>
+		<description>定义 SourceMenuItem 数据的标签</description>
+		<name>sourcemenuitem</name>
+		<tag-class>com.chinaedustar.publish.tag.SourceMenuItemTag</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<description>此菜单项的来源，必须提供。</description>
+			<name>source</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>		
+	</tag>
+	
+	<!-- pub:data 标签定义 -->
+	<tag>
+		<description>通用的定义数据产生的标签，此标签类似于 useBean，但传递 pageContext 过去。</description>
+		<name>data</name>
+		<tag-class>com.chinaedustar.publish.tag.DataTag</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<description>用来描述这个标签产生的数据的用途。</description>
+			<name>purpose</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>数据提供者的类的全名。</description>
+			<name>provider</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>产生数据之后放置在环境中的变量的名字，缺省为 data。</description>
+			<name>var</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>数据提供者使用到的参数信息，字符串形式</description>
+			<name>param</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>	
+			
+		<attribute>
+			<description>产生数据之后放置在哪个范围的定义，缺省为 page。</description>
+			<name>scope</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- pub:datatable 标签定义 -->
+	<tag>
+		<description>通用的 DataTable 数据产生标签，此标签类似于 useBean，但传递 pageContext 过去。</description>
+		<name>datatable</name>
+		<tag-class>com.chinaedustar.publish.tag.DataTableTag</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<description>用来获取数据的 HQL 语句。</description>
+			<name>hql</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>用来描述这个标签产生的数据的用途。</description>
+			<name>purpose</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>产生数据之后放置在环境中的变量的名字，缺省为 data。</description>
+			<name>var</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>产生数据之后放置在哪个范围的定义，缺省为 page。</description>
+			<name>scope</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>数据表格的列名称集合，用 “,” 分割。</description>
+			<name>columns</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- pub:tabs 标签定义 -->
+	<tag>
+		<description>定义 Tabs 数据的标签</description>
+		<name>tabs</name>
+		<tag-class>com.chinaedustar.publish.tag.TabsTag</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<description>构造好了之后标签页集合在 PageContext 环境中的变量名</description>
+			<name>var</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>标签页集合的作用范围</description>
+			<name>scope</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>标签页集合的注释</description>
+			<name>purpose</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- pub:tab 标签定义 -->
+	<tag>
+		<description>定义 Tab 数据的标签，它的父标签必须是tabs</description>
+		<name>tab</name>
+		<tag-class>com.chinaedustar.publish.tag.TabTag</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<description>标签页的命名，一般用于 javascript 前端访问 tab 元素。</description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>标签页的显示文本</description>
+			<name>text</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>标签页所使用的显示模板的名字。</description>
+			<name>template</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>标签页的数据提供者，可选。</description>
+			<name>provider</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>标签页的数据默认值。</description>
+			<name>default</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>		
+	</tag>
+	
+	<!-- pub:forda 标签定义 -->
+	<tag>
+
+		<description>定义 Forda 数据的标签。</description>
+		<name>forda</name>
+		<tag-class>com.chinaedustar.publish.tag.FordaTag</tag-class>
+		<body-content>JSP</body-content>
+	
+		<attribute>
+			<description>构造好了之后标签页集合在 PageContext 环境中的变量名。</description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>构造好 Forda 对象之后放置的变量范围。</description>
+			<name>scope</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>是否产生调试输出。</description>
+			<name>debug</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		
+	</tag>
+	
+	<!-- pub:entity_object -->
+	<tag>
+		<description>定义 EntityObject 数据的标签。</description>
+		<name>entity_object</name>
+		<tag-class>com.chinaedustar.publish.tag.EntityObjectTag</tag-class>
+		<body-content>JSP</body-content>
+		
+		<attribute>
+			<description>实体对象的名字，根据这个名字可以从父一级的 Forda 对象中找到该对象。</description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>实体对象的类名称。</description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>是否自动的收集数据（当前未实现）</description>
+			<name>auto</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		
+		<attribute>
+			<description>是否产生调试输出。</description>
+			<name>debug</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+	</tag>
+	
+	<!-- pub:entity_prop -->
+	<tag>
+		<description>定义 EntityProperty 数据的标签。</description>
+		<name>entity_prop</name>
+		<tag-class>com.chinaedustar.publish.tag.EntityPropertyTag</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<description>实体对象的属性名称。</description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>属性的类型，可以是基本类型也可以是对象类型，缺省为 string 类型。</description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>属性的值，此值可以直接给出，如果没有给出则将根据 param_key 从页面提交的数据中获取。</description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>属性的最小值，只有在类型为 int/char 的时候可用。</description>
+			<name>min</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>integer</type>
+		</attribute>
+		
+		<attribute>
+			<description>属性的最大值，只有在类型为 int/char 的时候可用。</description>
+			<name>max</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>integer</type>
+		</attribute>
+		
+		<attribute>
+			<description>属性获取数据的时候出现异常的提示信息。</description>
+			<name>error</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>属性的枚举值，不能超过这个范围。</description>
+			<name>enum</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>字符串属性值的最大长度。</description>
+			<name>maxlength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>属性的默认值。</description>
+			<name>default</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>属性在 Request 参数中的名称。</description>
+			<name>param_key</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>复杂属性对象的数据收集器。</description>
+			<name>getter</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>属性数据的验证器。</description>
+			<name>validator</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- pub:perform_action -->
+	<tag>
+		<description>执行标准增删改操作的标签。</description>
+		<name>perform_action</name>
+		<tag-class>com.chinaedustar.publish.tag.PerformActionTag</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<description>操作所在的容器对象名字或对象访问路径，如 site.labels。</description>
+			<name>container</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>所要执行的操作，识别的标准操作有 save,update,create,delete。</description>
+			<name>action</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>所要执行的操作的方法名字，如果给出了方法名字，则忽略 action。</description>
+			<name>action_method</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>操作的对象名字或对象访问路径，如 forda.label。</description>
+			<name>entity</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>是否产生调试输出，缺省为 false。</description>
+			<name>debug</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+	</tag>
+	
+</taglib>

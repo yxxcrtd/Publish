@@ -1,0 +1,1 @@
+document.write("<option value='78'>风景图片</option><option value='81'>国内风光</option><option value='82'>世界博览</option><option value='79'>动物图片</option><option value='80'>人物图片</option>");

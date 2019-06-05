@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+   <!-- 
+     Channel 拥有多个字段，所以用 dynamic-update。为保证更新正常，使用 select-before-update.
+   -->
+	<class name="Channel" table="Cor_Channel" dynamic-update="true" select-before-update="true">
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		<!-- ObjectUuid 是 java.util.UUID 类型的，不方便支持，用字符串存储。 -->
+		<property name="objectUuid" column="ObjectUuid" type="string" update="false" />
+		<!-- 对象的名字。 -->
+		<property name="name" column="Name" type="string" />
+		
+		<!-- 页面的 Logo. -->
+		<property name="logo" column="Logo" type="string" length="255" />
+		<!-- 页面的 Banner. -->	
+		<property name="banner" column="Banner" type="string" length="255" />
+		<!-- 页面的 Copyright, SQL 里面是 ntext 能正确获取吗？. -->	
+		<property name="copyright" column="Copyright" type="string" />
+		<!-- 页面的 MetaKey. -->
+		<property name="metaKey" column="MetaKey" type="string" length="255" />
+		<!-- 页面的 MetaDesc -->
+		<property name="metaDesc" column="MetaDesc" type="string" length="255" />
+		<!-- 页面使用的模板标识。 -->
+		<property name="templateId" column="TemplateId" type="int" />
+		<!-- 样式标识。 -->
+		<property name="skinId" column="SkinId" type="int" />
+
+		<!-- 项目名。 -->
+		<property name="itemName" column="ItemName" type="string" length="16" />
+		<!-- 项目单位。 -->
+		<property name="itemUnit" column="ItemUnit" type="string" length="16" />
+		<!-- 打开方式。 0：在原窗口打开；1：在新窗口打开 -->
+		<property name="openType" column="OpenType" type="integer"/>
+		<!-- 频道的简要提示。不支持html。 -->
+		<property name="tips" column="Tips" type="string" length="128" />
+		<!-- 频道的详细说明。 -->
+		<property name="description" column="Description" type="string" />
+		<!-- 频道存放的物理路径。 -->
+		<property name="channelDir" column="ChannelDir" type="string" length="32" />
+		<!-- 频道的url地址。 -->
+		<property name="channelUrl" column="ChannelUrl" type="string" length="255" />
+		<!-- 频道图片的url地址。 -->
+		<property name="channelPicUrl" column="ChannelPicUrl" type="string" length="255" />
+		
+		<!-- 频道使用的支持功能模块标识。  -->
+		<property name="moduleId" column="ModuleId" type="int" update="false" />
+		<!-- 频道中所对应的栏目集合的根栏目标识。 -->
+		<property name="rootColumnId" type="int" update="false" />
+		<!-- 频道的排列顺序。 -->
+		<property name="channelOrder" column="ChannelOrder" type="int" update="false" />
+		<!-- 频道状态：0 – 正常；1 – 暂时关闭，禁用；2-正在删除。 -->
+		<property name="status" column="Status" type="int" update="false" />
+		<!-- 频道类型：0 – 系统频道；1 – 内部频道；2 – 外部频道。  --> 
+		<property name="channelType" column="ChannelType" type="int" update="false" />
+		<!-- 点记率为N是属于热门状态。 -->
+		<property name="hitsOfHot" column="HitsOfHot" type="int" />
+
+		<!-- 权限标志。 -->
+		<property name="privilegeFlag" column="Privilege" type="int" update="false" />
+		<!-- 计费标志。 -->
+		<property name="chargeFlag" column="Charge" type="int" update="false" />
+		<!-- 自定义信息标志。 -->
+		<property name="customFlag" column="Custom" type="int" update="false" />
+		
+		<!-- 是否允许上传 -->
+		<property name="enableUploadFile" column="EnableUploadFile" type="boolean"/>
+		<!-- 上传文件的保存目录 -->
+      <property name="uploadDir" column="UploadDir"  type="string" length="32"/>
+      <!-- 允许上传的最大文件大小，以KB为单位 -->
+      <property name="maxFileSize" type="integer" column="MaxFileSize" />
+      <!-- 允许上传的文件类型，多种类型间以 | 隔开 -->
+      <property name="upFileType" column="UpFileType" type="string"/>
+        
+      <!-- 生成选项 -->
+      <!-- 生成HTML方式 -->
+      <property name="useCreateHTML" column="UseCreateHTML" type="int" />
+      <!-- 栏目、专题列表更新页数：添加内容后自动更新的栏目及专题列表页数。 -->
+      <property name="updatePages" column="UpdatePages" type="int" />
+      <!-- 自动生成HTML时的生成方式 -->
+      <property name="autoCreateType" column="AutoCreateType" type="int" />
+      <!-- 栏目列表文件的存放位置 -->
+      <property name="listFileType" column="ListFileType" type="int" />
+      <!-- 目录结构方式 -->
+      <property name="structureType" column="StructureType" type="int" />
+      <!-- 内容页文件的命名方式 -->
+      <property name="fileNameType" column="FileNameType" type="int" />
+      <!-- 频道首页的扩展名 -->
+      <property name="fileExtIndex" column="FileExtIndex" type="int" />
+      <!-- 栏目、专题页的扩展名 -->
+      <property name="fileExtList" column="FileExtList" type="int" />
+      <!-- 内容页的扩展名 -->
+      <property name="fileExtItem" column="FileExtItem" type="int" />
+      
+      <!-- 是否已经生成静态化页面 -->
+      <property name="isGenerated" column="IsGenerated" type="boolean" update="false" />
+      <!-- 静态化页面的地址 -->
+      <property name="staticPageUrl" column="StaticPageUrl" type="string" update="false" />
+      <!-- 是否显示在导航条上面。 -->
+      <property name="showInNav" column="ShowInNav" type="boolean" />
+	</class>
+</hibernate-mapping>

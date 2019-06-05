@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.chinaedustar.publish.model">
+	<class name="Feedback" table="Ext_Feedback" lazy="false">
+		<!-- 主键，数据库中字段为 ObjectId, 自动生成。 -->
+		<id name="id" column="ObjectId" >
+			<generator class="native" />
+		</id>
+		
+		<!-- 留言的标题。 -->
+		<property name="title" type="string" column="Title" />
+		<!-- 留言的内容。 -->
+		<property name="content" type="string" column="Content" />
+		<!-- 留言的时间。 -->
+		<property name="createTime" type="timestamp" column="CreateTime" />
+		<!-- 留言的点击次数。 -->
+		<property name="hits" type="int" column="Hits" />
+		<!-- 主文档ID。 -->
+        <property name="mainId" type="int" column ="MainId" />
+		<!-- 主文档标识。 0：回复；1：主文档-->
+        <property name="mainFlag" type="int" column ="MainFlag" />
+       	<!-- 用户名。 -->
+		<property name="userName" type="string" column="UserName" />
+        <!-- 用户性别。0：女；1：男-->
+		<property name="userSex" type="int" column ="Sex" />
+        <!-- 用户E-mail-->   
+        <property name="email" type="string" column="E_mail" length="50" />
+		<!-- 用户QQ-->             
+        <property name="userQq" type="string" column="Oicq" length="50" />
+        <!-- 用户ICQ-->   
+        <property name="userIcq" type="string" column="Icq" length="50" />
+		<!-- 用户Msn-->              
+        <property name="userMsn" type="string" column="Msn" length="50" />
+        <!-- 用户主页-->       
+        <property name="homepage" type="string" column="HomePage" length="50" />
+              
+		<!-- 留言的状态，0：未审核，1：审核通过。 -->
+		<property name="status" type="int" column="Status" />
+		<!-- 是否公开显示。  -->
+		<property name="isDisplay" type="boolean" column="IsDisplay" />
+		<!-- 是否静态化了。 -->
+		<property name="isGenerated" type="boolean" column="IsGenerated" />
+		<!-- 静态化链接地址。 -->
+		<property name="staticPageUrl" type="string" column="StaticPageUrl" />
+
+	</class>
+</hibernate-mapping>
